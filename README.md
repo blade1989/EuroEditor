@@ -14,9 +14,7 @@ Some feature that still need some polishing:
  - Rich Text Editing.
  - Source code editing.
  - Mark Down editing.
- - Smileys.
- - 
- 
+
 ##Screenshot
 
 ![EuroEditor - 0.0.1][1]
