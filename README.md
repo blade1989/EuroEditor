@@ -2,6 +2,7 @@ EuroEditor
 ==========
 
 EuroEditor, Your free, easy to use, and customizable web based editor
+
 ---
 
 EuroEditor - at the time of writing - is a not finished product. Inspired by [Libreoffice - Writer ](https://en.wikipedia.org/wiki/LibreOffice_Writer "LibreOffice Writer - Wikipedia, the free encyclopedia")
