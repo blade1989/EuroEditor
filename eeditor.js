@@ -14,9 +14,9 @@ function startmenu() {
     $('#startmenu').attr('style', 'display: block;');
     $('#cancel').attr('style', 'display: block;');
 
-    // $('#eetextarea').attr('style', 'display: none;');
-    // $('article').attr('style', 'height: 500px;');
-    // $('div#eeditor').attr('style', 'height: 460px;');
+     $('#eetextarea').attr('style', 'display: none;');
+     $('article').attr('style', 'height: 500px;');
+     $('div#eeditor').attr('style', 'height: 460px;');
     document.getElementById("startmenu").innerHTML =
         "<div>\n" +
         "<ul id=\"startmenusidebar\">" +
@@ -29,7 +29,7 @@ function startmenu() {
         "</ul>" +
         "</div>" +
 
-    " <select title=\"Browse...\" style=\"float: right;margin: -1px 0;padding: 5px 0;width: 574px;\" placeholder=\"Browse...\">" +
+    " <select title=\"Browse...\" style=\"float: right;margin: -1px 0;width: 574px;\" placeholder=\"Browse...\">" +
         "<option title=\"Not yet implemented\" value=\"Mega\">Mega</option>" + // https://mega.co.nz/#sdk
     "<option title=\"Not yet implemented\" value=\"Dropbox\">Dropbox</option>" + // https://www.dropbox.com/developers
     "<option title=\"Not yet implemented\" value=\"OneDrive\">OneDrive</option>" +
@@ -51,7 +51,7 @@ function startmenu() {
 
     "</div>" +
 
-    " <select title=\"Browse...\" style=\"float: right;margin: -35px 74px -1px;padding: 5px 0;width: 495px;\" placeholder=\"Browse...\">" +
+    " <select title=\"Browse...\" style=\"float: right;margin: -35px 79px -1px;width: 495px;height: 31px;\" placeholder=\"Browse...\">" +
         "<option title=\"Not yet implemented\" value=\"Mega\">Mega</option>" +
         "<option title=\"Not yet implemented\" value=\"Dropbox\">Dropbox</option>" +
         "<option title=\"Not yet implemented\" value=\"OneDrive\">OneDrive</option>" +
@@ -64,6 +64,13 @@ function startmenu() {
 
 }
 
+function closestartmenu() {
+    $('#startmenu').attr('style', 'display: none;');
+    $('#cancel').attr('style', 'display: none;');
+    $('#eetextarea').attr('style', 'display: block;');
+    $('article').attr('style', 'height: 100%;');
+    $('div#eeditor').attr('style', 'height: 100%;');
+}
 
 
 //window.onload = startmenu;
@@ -327,6 +334,22 @@ function help() {
 
 function fullscreen() {
     $("#eeditor").attr("class", "fullscreen")
+}
+
+
+function source() {
+     $("#holder").attr("class", "uhidden");
+     $("#holder").attr("style", "width: 100%;height: 750px;");
+     $("#eetextarea").attr("class", "hidden");
+    $('#source').attr('onclick', 'inlineediting()');
+    // $('#eetextarea').removeAttr('id');
+    // $(".hidden").attr("id", "eetextarea");
+}
+
+function inlineediting() {
+    $('#holder').attr('class', 'hidden');
+    $('#eetextarea').attr('class', 'unhidden');
+    $('#source').attr('onclick', 'source()');
 }
 
 
