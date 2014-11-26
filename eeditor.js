@@ -346,9 +346,6 @@ function spellcheckoff() {
     $('#spellcheckbaroff').attr('class', 'spellcheckbaroff');
 }
 
-
-
-
 $(document).ready(function() {
 
     $("#bold").click(function() {
@@ -421,9 +418,6 @@ $(document).ready(function() {
         return false;
     });
 
-
-
-
     $("#sans-serif").click(function() {
         // get the selected range
         var range = window.getSelection().getRangeAt(0);
@@ -437,16 +431,15 @@ $(document).ready(function() {
         return false;
     });
 
+    // Works in fiddle(http://jsfiddle.net/c751n7du/2/), perfectly, just not here?
+    $("div#eetextarea").on('keyup', function() {
+        var value = $(this).html();
+        $("textarea#holder").val(value);
+    })
+        .trigger('keyup');
+
 
 });
-
-
-// Works in fiddle(http://jsfiddle.net/c751n7du/2/), perfectly, just not here?
-$("div#eetextarea").on('keyup', function () {
-    var value = $(this).html();
-    $("textarea#holder").val(value);
-})
-.trigger('keyup');
 
 
 // how many words used in the document
