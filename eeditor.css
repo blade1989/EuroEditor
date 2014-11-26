@@ -181,6 +181,7 @@ html body article #eeditor #eebuttons, #eebuttons2 {
     min-height: 250px;
     overflow: auto;
     padding: 0 5px;
+    resize: vertical;
     text-align: left;
 }
 
