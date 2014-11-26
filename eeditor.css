@@ -180,6 +180,11 @@ html body article #eeditor #eebuttons, #eebuttons2 {
     max-height: 100%;
     min-height: 750px;
     height: 750px;
+
+    max-width: 100%;
+    min-width: 50%;
+    width: auto;
+
     overflow: auto;
     padding: 0 5px;
     resize: vertical;
@@ -248,7 +253,8 @@ span#spacer {
 
 select {
     float: left;
-    margin: 4px 1px;
+    height: 25px;
+    margin: 2px 1px;
     padding: 0;
     text-align: left;
 }
