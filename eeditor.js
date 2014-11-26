@@ -441,53 +441,13 @@ $(document).ready(function() {
 });
 
 
-function ReplaceContent() {
-    var ta = document.getelementbyid("foo");
-    var blah = document.getelementbyid("blah");
-    ta.value = blah.innerHTML;
-    document.alert(blah.innerHTML);
-}
+// Works in fiddle(http://jsfiddle.net/c751n7du/2/), perfectly, just not here?
+$("div#eetextarea").on('keyup', function () {
+    var value = $(this).html();
+    $("textarea#holder").val(value);
+})
+.trigger('keyup');
 
-
-//$("$eetextarea").html();
-
-
-//$("#eetextarea").html();
-//$("#eetextarea").html($("#holder").val());
-
-// var MyDiv1 = document.getElementById('eetextarea');
-// var MyDiv2 = document.getElementById('holder');
-// MyDiv2.innerHTML = MyDiv1.innerHTML;
-
-
-// $('#eetextarea').keyup(function(){                  
-
-
-//     var value = $(this).val();
-//     var contentAttr = $(this).attr('name');
-
-//     $('.'+contentAttr+'').html(value.replace(/\r?\n/g,'<br/>'));
-
-// })
-
-// function divtotextarea() {
-//     $("#eetextarea").val($("#holder").html());
-// }
-
-// $("#eetextarea")
-//     .keyup(function() {
-//         var value = $(this).val();
-//         $("#holder").text(value);
-//     })
-//     .keyup();
-
-// var MyDiv1 = document.getElementById('eetextarea');
-// var MyDiv2 = document.getElementById('holder');
-// MyDiv2.innerHTML = MyDiv1.innerHTML; 
-
-
-//var textarea = document.getElementById('holder');
-//textarea.value = getelementbyid('eetextarea').innerHTML
 
 // how many words used in the document
 function word_count(field) {
@@ -514,29 +474,3 @@ $(function() {
     });
 
 });
-
-
-// https://forum.jquery.com/topic/how-to-count-the-words-of-textbox
-
-// $(document).ready(function() {
-
-//     /** 
-//      * Character Counter for inputs and text areas
-//      */
-//     $('#eetextarea').each(function() {
-
-//         // get current number of words  
-//         var length = $(this).val().split(/\b[\s,\.-:;]*/).length;
-//         // update characters  
-//         $(this).parent().find('.counter').html(length + ' words');
-//         // bind on key up event  
-//         $(this).keyup(function() {
-
-//             // get new length of words  
-//             var new_length = $(this).val().split(/\b[\s,\.-:;]*/).length;
-//             // update  
-//             $(this).parent().find('.counter').html(new_length + ' words');
-//         });
-//     });
-
-// });
