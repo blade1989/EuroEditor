@@ -183,7 +183,7 @@ html body article #eeditor #eebuttons, #eebuttons2 {
 
     max-width: 100%;
     min-width: 50%;
-    width: auto;
+    width: 100%;
 
     overflow: auto;
     padding: 0 5px;
@@ -469,4 +469,50 @@ html body article .fullscreen #eebuttons2 {
 
 #words:before {
     content: "Words:";
+}
+
+
+a[href$=".pdf"]:after, a[href$=".doc"]:after, a[href$=".docx"]:after, a[href$=".xls"]:after, a[href$=".ppt"]:after {
+    border: 1px solid #454545;
+    border-radius: 25px;
+    color: #FFFFFF;
+    padding: 0px 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: -5px;
+    text-decoration: none;
+    vertical-align: super;
+    -webkit-box-sizing: padding-box; 
+    -moz-box-sizing: padding-box; 
+    box-sizing: padding-box
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+
+a[href$=".pdf"]:after {
+    content: "PDF";
+    background-color: #CC0001;
+}
+
+a[href$=".doc"]:after {
+    content: "DOC";
+    background-color: #5976AF;
+}
+
+a[href$=".docx"]:after {
+    content: "DOCX";
+    background-color: #023B70;
+}
+
+a[href$=".xls"]:after {
+    content: "XLS";
+    background-color: #207245;
+}
+
+a[href$=".ppt"]:after {
+    content: "ppt";
+    background-color: #D24625;
+    padding-bottom: 2px;
 }
