@@ -36,8 +36,6 @@
 
 	<link rel="stylesheet" href="eeditor.css">
 
-<link rel="stylesheet" type="text/css" href="http://www.eurobytes.nl/css/class.css">
-
 <style>
 html, body {
   background: #EEEEEE;
@@ -52,14 +50,6 @@ article {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   width: 80%;
 }
-
-/*article {
-	background-color: #F9F9F9;
-	border: 1px solid #CCCCCC;
-	padding: 20px;
-	margin: 20px auto;
-	width: 750px;
-}*/
 
 #cancel {
     display: block;
@@ -78,17 +68,15 @@ article {
 	resize: none;
 }
 
-</style>
-
-<script>
-function closestartmenu() {
-    $('#startmenu').attr('style', 'display: none;');
-    $('#cancel').attr('style', 'display: none;');
-    // $('#eetextarea').attr('style', 'display: block;');
-    // $('article').attr('style', 'height: 100%;');
-    // $('div#eeditor').attr('style', 'height: 100%;');
+.unhidden {
+	display: block;
+	visibility: visible;
+	width: 100%;
+	height: 100%;
+	resize: none;
 }
-</script>
+
+</style>
 
 </head>
 <body>
@@ -164,6 +152,7 @@ function closestartmenu() {
 
 		<button onclick="fullscreen()" id="fullscreen" title="Full screen editor">F</button>
 
+		<button onclick="source()" id="source" title="View Source Code">S</button>
 
 		<button onclick="index()" id="toc" title="Table Of Contents">TC</button>
 
@@ -301,7 +290,7 @@ function closestartmenu() {
 
 <form action="save.php">
 
-<div id="eetextarea" class="word_count" spellcheck="false" contentEditable="false">
+<div id="eetextarea" class="word_count unhidden" spellcheck="false" contentEditable="false">
 
 <h1>Header 1</h1>
 <h2>Header 2</h2>
