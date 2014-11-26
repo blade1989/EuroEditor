@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<!--**************************************************
+		Author		: Imri Paloja
+		Email 		: Imri.paloja@gmail.com
+		HomePage	: www.eurobytes.nl
+		Version 	: 0.1
+		Name 		: EuroEditor
+**************************************************-->
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>EuroEditor by Imri Paloja</title>
+    <link rel="shortcut icon" href="http://www.eurobytes.nl/favicon.ico" type="image/x-icon">
+    <meta name="description" content="EuroEditor, Your free, easy to use, and customizable web based editor">
+    <meta name="keywords" content="Editor, advanced, customizable">
+    <meta name="author" content="Imri Paloja">
+
+	<!-- HTML5 and CSS3 for IE less than 9 -->
+
+	  <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	  <![endif]-->
+
+	  <!-- css3-mediaqueries.js for IE less than 9 -->
+	  <!--[if lt IE 9]>
+	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+
+	<![endif]-->
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="eeditor.js"></script>
+
+	<link rel="stylesheet" href="eeditor.css">
+
+<link rel="stylesheet" type="text/css" href="http://www.eurobytes.nl/css/class.css">
+
+<style>
+html, body {
+  background: #EEEEEE;
+}
+
+article {
+  max-width: 50em;
+  background: white;
+  padding: 2em;
+  margin: 1em auto;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  width: 80%;
+}
+
+/*article {
+	background-color: #F9F9F9;
+	border: 1px solid #CCCCCC;
+	padding: 20px;
+	margin: 20px auto;
+	width: 750px;
+}*/
+
+#cancel {
+    display: block;
+    height: 30px;
+    margin: 415px 0 0 624px;
+    position: absolute;
+    width: 75px;
+    z-index: 9090;
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+	resize: none;
+}
+
+</style>
+
+<script>
+function closestartmenu() {
+    $('#startmenu').attr('style', 'display: none;');
+    $('#cancel').attr('style', 'display: none;');
+    // $('#eetextarea').attr('style', 'display: block;');
+    // $('article').attr('style', 'height: 100%;');
+    // $('div#eeditor').attr('style', 'height: 100%;');
+}
+</script>
+
+</head>
+<body>
+		
+<br><br>
+<!-- <button id="cancel" title="cancel" onclick="closestartmenu()" style="display: none;" value="cancel">cancel</button> -->
+
+<!-- <a href="http://www.eurobytes.nl/" onclick="window.open(this.href,'targetWindow','toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=700, height=250'); return false;">Popup link</a> -->
+
+
+
+<a href="https://www.dropbox.com/saver?origin=https%3A%2F%2Fwww.dropbox.com&amp;app_key=dropbox&amp;version=2" onclick="window.open(this.href,'targetWindow','toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=700, height=250'); return false;">Popup link</a>
+
+
+
+<!-- 
+<iframe 
+src="https://www.dropbox.com/chooser?origin=https%3A%2F%2Fwww.dropbox.com&amp;app_key=dropbox&amp;link_type=preview&amp;trigger=button&amp;multiselect=false&amp;extensions=&amp;folderselect=false&amp;iframe=true&amp;version=2">
+</iframe> -->
+
+ <article>
+
+<div id="eeditor">
+
+	<div id="startmenuholder">
+
+
+	<div onclick="startmenu()" id="startmenu" style="display: none;">
+
+	</div>
+
+		<button id="cancel" title="cancel" onclick="closestartmenu()" style="display: none;">cancel</button>
+	</div>
+
+	<div id="eebuttons">
+
+		<button onclick="new()" id="new" title="Open a new article"></button>
+		<button onclick="startmenu()" id="open" title="Select a file from startmenu"></button>
+
+		<span id="spacer"></span>
+
+		<button onclick="save()" id="save" title="save this article"></button>
+		<button onclick="javascript:window.location='mailto:?subject=Interesting information&amp;body=I thought you might find this information interesting: ' + window.location;" id="mail" title="mail this page"></button>
+
+		<span id="spacer"></span>
+
+		<button onclick="edit()" id="edit" title="edit this article"></button>
+
+		<button onclick="pdf()" id="expdf" title="Export as pdf"></button>
+		<button onclick="print()" id="print" title="Print this page"></button>
+		<button onclick="printpreview()" id="printpreview" title="Print preview"></button>
+
+		<span id="spacer"></span>
+
+		<button onclick="spellcheckon()" id="spellcheck" title="Turn Spell Checker on"></button>
+		<button onclick="spellcheckoff()" id="spellcheckoff" title="Turn Spell Checker Off"></button>
+
+		<span id="spacer"></span>
+
+		<button onclick="cut()" id="cut" title="Cut the selected text"></button>
+		<button onclick="paste()" id="paste" title="Paste the copied text"></button>
+		<button onclick="copyToClipboard()" id="cp" title="Clipboard manager"></button>
+
+		<span id="spacer"></span>
+
+		<button onclick="revert()" id="revert" title="revert the last made changes"></button>
+		<button onclick="apply()" id="apply" title="Forward with the last made changes"></button>
+
+
+		<span id="spacer"></span>
+
+		<button onclick="link()" id="link" title="create a link"></button>
+		<button onclick="img()" id="img" title="Upload/link to an image"></button>
+
+		<span id="spacer"></span>
+
+		<button onclick="table()" id="table" title="create a table"></button>
+
+
+		<button onclick="ucharachters()" id="ucharachters" title="Display unprintable charachters"></button>
+
+		<span id="spacer"></span>
+
+
+		<button onclick="fullscreen()" id="fullscreen" title="Full screen editor">F</button>
+
+
+		<button onclick="index()" id="toc" title="Table Of Contents">TC</button>
+
+
+		<button onclick="help()" id="help" title="Display help page">?</button>
+
+	</div>
+	
+	<div id="eebuttons2">
+
+		<select title="style">
+		  <option value="paragraph">parargraph</option>
+		  <option value="H1">header 1</option>
+		  <option value="H2">header 2</option>
+		  <option value="H3">header 3</option>
+		  <option value="blockquote" id="blockquote" onclick="blockquote()">blockquote</option>
+		  <option value="code" id="code" onclick="code()">code</option>
+		</select>
+
+		<select title="font-family">
+		  <option value="liberation-serif">Liberation Serif</option>
+		  <option value="serif">serif</option>
+		  <option value="sans-serif" id="sans-serif">sans-serif</option>
+		  <option value="times-new-roman">Times New Roman</option>
+		</select>
+
+		<select title="font-size">
+		  <option value="onepx">1px</option>
+		  <option value="twopx">2px</option>
+		  <option value="fourpx">4px</option>
+		  <option value="eightpx">8px</option>
+		  <option value="sixteenpx" selected>16px</option>
+		  <option value="twentyeightpx">28px</option>
+		</select>
+
+
+		<button id="bold" title="Bold selected text">B</button>
+		<button id="italic" title="Italic selected text">I</button>
+		<button id="underline" title="Underlin selected text">U</button>
+
+		<span id="spacer"></span>
+
+		<button id="textleft" title="Align text to the left"></button>
+		<button id="textcenter" title="Align text to the center"></button>
+		<button id="textright" title="Align text to the right"></button>
+		<button id="textjustified" title="Align text to the justified"></button>
+
+		<span id="spacer"></span>
+
+		<button id="ol" title="Make an ordered list">OL</button>
+		<button id="ul" title="Make an unorderd list">UL</button>
+
+		<button id="tabtoleft" title="tab to the left"> &lt; </button>
+		<button id="tabtoright" title="tab to the right"> &gt; </button>
+
+		<span id="spacer"></span>
+
+<!-- 		<button id="textcolor" title="Change text color" style="background-color: #454545;">A</button>
+		<button id="mark" title="mark the selected text" style="background-color: #CC0000;">A</button>
+
+ -->
+
+		<select title="font-size" style="width: 45px;">
+
+
+			<option title="" class="emji">😁</option>
+			<option title="" class="emji">😂</option>
+			<option title="" class="emji">😃</option>
+			<option title="" class="emji">😄</option>
+			<option title="" class="emji">😅</option>
+			<option title="" class="emji">😆</option>
+			<option title="" class="emji">😇</option>
+			<option title="" class="emji">😈</option>
+			<option title="" class="emji">😉</option>
+			<option title="" class="emji">😊</option>
+			<option title="" class="emji">😋</option>
+			<option title="" class="emji">😌</option>
+			<option title="" class="emji">😍</option>
+			<option title="" class="emji">😎</option>
+			<option title="" class="emji">😏</option>
+			<option title="" class="emji">😐</option>
+			<option title="" class="emji">😒</option>
+			<option title="" class="emji">😓</option>
+			<option title="" class="emji">😔</option>
+			<option title="" class="emji">😖</option>
+			<option title="" class="emji">😘</option>
+			<option title="" class="emji">😚</option>
+			<option title="" class="emji">😜</option>
+			<option title="" class="emji">😝</option>
+			<option title="" class="emji">😞</option>
+			<option title="" class="emji">😠</option>
+			<option title="" class="emji">😡</option>
+			<option title="" class="emji">😢</option>
+			<option title="" class="emji">😣</option>
+			<option title="" class="emji">😤</option>
+			<option title="" class="emji">😥</option>
+			<option title="" class="emji">😨</option>
+			<option title="" class="emji">😩</option>
+			<option title="" class="emji">😪</option>
+			<option title="" class="emji">😫</option>
+			<option title="" class="emji">😭</option>
+			<option title="" class="emji">😰</option>
+			<option title="" class="emji">😱</option>
+			<option title="" class="emji">😲</option>
+			<option title="" class="emji">😳</option>
+			<option title="" class="emji">😵</option>
+			<option title="" class="emji">😶</option>
+			<option title="" class="emji">😷</option>
+			<option title="" class="emji">😸</option>
+			<option title="" class="emji">😹</option>
+			<option title="" class="emji">😺</option>
+			<option title="" class="emji">😻</option>
+			<option title="" class="emji">😼</option>
+			<option title="" class="emji">😽</option>
+			<option title="" class="emji">😾</option>
+			<option title="" class="emji">😿</option>
+			<option title="" class="emji">🙀</option>
+			<option title="" class="emji">🙅</option>
+			<option title="" class="emji">🙆</option>
+			<option title="" class="emji">🙇</option>
+			<option title="" class="emji">🙈</option>
+			<option title="" class="emji">🙉</option>
+			<option title="" class="emji">🙊</option>
+			<option title="" class="emji">🙋</option>
+			<option title="" class="emji">🙌</option>
+			<option title="" class="emji">🙍</option>
+			<option title="" class="emji">🙎</option>
+			<option title="" class="emji">🙏</option>
+
+		</select>
+
+	</div> <!-- eebuttons2 -->
+
+<!-- onClick="this.contentEditable='true';"  -->
+
+<form action="save.php">
+
+<div id="eetextarea" class="word_count" spellcheck="false" contentEditable="false">
+
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<a href="http://3.bp.blogspot.com/-8Zjre1kqhkY/U03gel-lczI/AAAAAAAASKU/GYJj-zIIPiE/s1600/libreoffice-sidebar.png" title="LibreOffice - sifr style">
+	<img src="http://3.bp.blogspot.com/-8Zjre1kqhkY/U03gel-lczI/AAAAAAAASKU/GYJj-zIIPiE/s1600/libreoffice-sidebar.png" alt="LibreOffice - sifr style">
+</a>
+
+
+<ol>
+	<li>Ordered list</li>
+	<li>Ordered list</li>
+	<li>Ordered list</li>
+	<li>Ordered list</li>
+	<li>Ordered list</li>
+</ol>
+
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+
+<h4>Header 4</h4>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+<h5>Header 5</h5>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+<!-- something of a comment -->
+
+<h6>Header 6</h6>
+
+	<p>😼
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum<span title="" class="emji">😁</span>.
+	</p>
+
+
+<p>
+	<span title="" class="emji">😁</span>
+	<span title="" class="emji">😂</span>
+	<span title="" class="emji">😃</span>
+	<span title="" class="emji">😄</span>
+	<span title="" class="emji">😅</span>
+	<span title="" class="emji">😆</span>
+	<span title="" class="emji">😇</span>
+	<span title="" class="emji">😈</span>
+	<span title="" class="emji">😉</span>
+	<span title="" class="emji">😊</span>
+	<span title="" class="emji">😋</span>
+	<span title="" class="emji">😌</span>
+	<span title="" class="emji">😍</span>
+	<span title="" class="emji">😎</span>
+	<span title="" class="emji">😏</span>
+	<span title="" class="emji">😐</span>
+	<span title="" class="emji">😒</span>
+	<span title="" class="emji">😓</span>
+	<span title="" class="emji">😔</span>
+	<span title="" class="emji">😖</span>
+	<span title="" class="emji">😘</span>
+	<span title="" class="emji">😚</span>
+	<span title="" class="emji">😜</span>
+	<span title="" class="emji">😝</span>
+	<span title="" class="emji">😞</span>
+	<span title="" class="emji">😠</span>
+	<span title="" class="emji">😡</span>
+	<span title="" class="emji">😢</span>
+	<span title="" class="emji">😣</span>
+	<span title="" class="emji">😤</span>
+	<span title="" class="emji">😥</span>
+	<span title="" class="emji">😨</span>
+	<span title="" class="emji">😩</span>
+	<span title="" class="emji">😪</span>
+	<span title="" class="emji">😫</span>
+	<span title="" class="emji">😭</span>
+	<span title="" class="emji">😰</span>
+	<span title="" class="emji">😱</span>
+	<span title="" class="emji">😲</span>
+	<span title="" class="emji">😳</span>
+	<span title="" class="emji">😵</span>
+	<span title="" class="emji">😶</span>
+	<span title="" class="emji">😷</span>
+	<span title="" class="emji">😸</span>
+	<span title="" class="emji">😹</span>
+	<span title="" class="emji">😺</span>
+	<span title="" class="emji">😻</span>
+	<span title="" class="emji">😼</span>
+	<span title="" class="emji">😽</span>
+	<span title="" class="emji">😾</span>
+	<span title="" class="emji">😿</span>
+	<span title="" class="emji">🙀</span>
+	<span title="" class="emji">🙅</span>
+	<span title="" class="emji">🙆</span>
+	<span title="" class="emji">🙇</span>
+	<span title="" class="emji">🙈</span>
+	<span title="" class="emji">🙉</span>
+	<span title="" class="emji">🙊</span>
+	<span title="" class="emji">🙋</span>
+	<span title="" class="emji">🙌</span>
+	<span title="" class="emji">🙍</span>
+	<span title="" class="emji">🙎</span>
+	<span title="" class="emji">🙏</span>
+</p>
+
+<ul>
+	<li>Unordered list</li>
+	<li>Unordered list</li>
+	<li>Unordered list</li>
+	<li>Unordered list</li>
+	<li>Unordered list</li>
+</ul>
+
+
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+
+</div> <!-- eetextarea -->
+
+
+<textarea id="holder" class="hidden"></textarea>
+
+<!-- <input type="submit" value="submit"> -->
+</form>
+
+     
+            <span class="counter"></span>
+
+            <input type="text" value="" id="words" disabled title="Words">
+          
+ 		| 
+			<!-- <span class="misspelledwords" title="Number of misspeled words">5*</span> -->
+
+
+			<span id="spellcheckbaroff" title="Spell check on/off" class="spellcheckbaroff">Spellcheck: </span>  
+
+</div> <!-- eeditor -->
+
+
+
+
+</article>
+
+</body>
+</html>
