@@ -83,7 +83,65 @@ article {
 
 <!-- <a href="https://www.dropbox.com/saver?origin=https%3A%2F%2Fwww.dropbox.com&amp;app_key=dropbox&amp;version=2" onclick="window.open(this.href,'targetWindow','toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=700, height=250'); return false;">Popup link</a> -->
 
+<script>
+// document.onmouseup = function(evt) {
+//     var editor = document.getElementById("eetextarea")
+//     var range = document.caretRangeFromPoint(evt.clientX, evt.clientY);
+//     var sel = window.getSelection();
+    //var selRange;
 
+    // Save initial selection
+    // if (sel.rangeCount > 0) {
+    //     selRange = sel.getRangeAt(0);
+    // }
+
+    //range.expand("eetextarea");
+    //sel.removeAllRanges();
+    //sel.addRange(range);
+   // document.getElementById("styleinfo").innerHTML = "bold: " + document.queryCommandState('bold');
+    //document.getElementById("styleinfo").innerHTML = "Style: Italic: " + document.queryCommandState("italic");
+    //document.getElementById("styleinfo").innerHTML = "Style: Underline: " + document.queryCommandState("underline");
+    
+    // Restore original selection
+    // sel.removeAllRanges();
+    // if (selRange ) {
+    //     selRange = sel.addRange(selRange);
+    // }
+//};
+
+$( "#eetextarea" ).select(function() {
+  $( "#somethingselected" ).text( "Something was selected" ).show().fadeOut( 1000 );
+});
+
+
+</script>
+
+<!-- <div id="pagefeature">
+	<button onclick="closepagefeature()" id="closepagefeature" title="Close">TC</button>
+
+<h2 style="font-size:100%;margin: 0px;padding;0px">Page Settings</h2>
+
+	<p>
+		enable or disable features!
+	</p>
+
+		<label>ToC?
+			<input type="checkbox" name="" value="ToC?">
+		</label>
+
+		<label>sidebar
+			<input type="checkbox" name="" value="sidebar">
+		</label>
+
+		<label>feedback
+			<input type="checkbox" name="" value="feedback">
+		</label>
+
+		<label>comments
+			<input type="checkbox" name="" value="comments">
+		</label>
+
+</div> -->
 
 
  <article>
@@ -145,7 +203,7 @@ article {
 		<button onclick="table()" id="table" title="create a table"></button>
 
 
-		<button onclick="ucharachters()" id="ucharachters" title="Display unprintable charachters"></button>
+		<!-- <button onclick="ucharachters()" id="ucharachters" title="Display unprintable charachters"></button> -->
 
 		<span id="spacer"></span>
 
@@ -159,11 +217,15 @@ article {
 
 		<button onclick="help()" id="help" title="Display help page">?</button>
 
+
+		<button onclick="pagefeaturebutton()" id="pagefeature" title="Show the page settings">&equiv;</button>
+
+
 	</div>
 	
 	<div id="eebuttons2">
 
-		<select title="style">
+		<select title="style" id="style">
 		  <option value="paragraph">parargraph</option>
 		  <option value="H1">header 1</option>
 		  <option value="H2">header 2</option>
@@ -291,84 +353,12 @@ article {
 <form action="save.php">
 
 <div id="eetextarea" class="word_count unhidden" spellcheck="false" contentEditable="false">
-
-<h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-
-<p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-<a href="http://3.bp.blogspot.com/-8Zjre1kqhkY/U03gel-lczI/AAAAAAAASKU/GYJj-zIIPiE/s1600/libreoffice-sidebar.png" title="LibreOffice - sifr style">
-	<img src="http://3.bp.blogspot.com/-8Zjre1kqhkY/U03gel-lczI/AAAAAAAASKU/GYJj-zIIPiE/s1600/libreoffice-sidebar.png" alt="LibreOffice - sifr style">
-</a>
-
-
-<ol>
-	<li>Ordered list</li>
-	<li>Ordered list</li>
-	<li>Ordered list</li>
-	<li>Ordered list</li>
-	<li>Ordered list</li>
-</ol>
-
-<p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-
-<h4>Header 4</h4>
-
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<b>Write</b> <i>me</i> an <u>article</u>!
 	</p>
+</div>
 
-<h5>Header 5</h5>
-
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
-
-<!-- something of a comment -->
-
-<h6>Header 6</h6>
-
-	<p>😼
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum<span title="" class="emji">😁</span>.
-	</p>
-
-
-<ul>
-	<li>Unordered list</li>
-	<li>Unordered list</li>
-	<li>Unordered list</li>
-	<li>Unordered list</li>
-	<li>Unordered list</li>
-</ul>
-
-
-<p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-
-</div> <!-- eetextarea -->
+<!-- eetextarea -->
 
 
 <textarea id="holder" class="hidden"></textarea>
@@ -376,9 +366,19 @@ article {
 <!-- <input type="submit" value="submit"> -->
 </form>
 
-		<div>
+		<div id="eetextareainfo">
 
+            Page: <span title="Not Working">1/10</span>
+          
+ 		| 
             Words: <input type="text" value="" id="words" disabled title="Words">
+          
+ 		| 
+            Style: <span title="Not Working" id="styleinfo"></span>
+          
+ 		| <div id="somethingselected" style="display: none;">Something was selected</div>	
+
+ 			Language: <span title="Not Working">English(USA)</span>
           
  		| 
 
