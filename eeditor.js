@@ -8,15 +8,52 @@ Name        : EuroEditor.js
 
 function copyToClipboard(text) {
     window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+} 
+
+//&equiv;
+
+
+function pagefeaturebutton() {
+    var pageinfo =
+        "<div id=\"pagefeature\">" +
+        "<button onclick=\"closepagefeature()\" id=\"closepagefeature\" title=\"Close\">TC</button>" +
+
+        "<h2 style=\"font-size:100%;margin: 0px;padding;0px\">Page Settings</h2>" +
+
+        "<p>enable or disable features!</p>" +
+
+        "<label title=\"This will display a toc button in the article(position relative)\">ToC?" +
+        "<input type=\"checkbox\" name=\"\" value=\"ToC?\">" +
+        "</label>" +
+
+        "<label title=\"This will display the sidebar\">sidebar" +
+        "<input type=\"checkbox\" name=\"\" value=\"sidebar\" checked>" +
+        " </label>" +
+
+        "<label title=\"This will allow users to give feedback in the article\">feedback" +
+        "<input type=\"checkbox\" name=\"\" value=\"feedback\" checked>" +
+        "</label>" +
+
+        "<label title=\"Allow for users to comment in the comment box\">comments" +
+        "<input type=\"checkbox\" name=\"\" value=\"comments\" checked>" +
+        "</label>" +
+
+        "</div>"
+
+        $("body").prepend(pageinfo);
+}
+
+function closepagefeature() {
+    $('#pagefeature').remove()
 }
 
 function startmenu() {
     $('#startmenu').attr('style', 'display: block;');
     $('#cancel').attr('style', 'display: block;');
 
-     $('#eetextarea').attr('style', 'display: none;');
-     $('article').attr('style', 'height: 500px;');
-     $('div#eeditor').attr('style', 'height: 460px;');
+    $('#eetextarea').attr('style', 'display: none;');
+    $('article').attr('style', 'height: 500px;');
+    $('div#eeditor').attr('style', 'height: 460px;');
     document.getElementById("startmenu").innerHTML =
         "<div>\n" +
         "<ul id=\"startmenusidebar\">" +
@@ -121,11 +158,14 @@ function blockquote() {
 }
 
 
+// $( "#style" ).val();
+
+
 
 function index() {
     var index =
         "<ul id=\"EuroTOC\" style=\"display: block;\">" +
-        "<li id=\"tocid\">Table of Content <button id=\"closetoc\" onclick=\"closetoc()\">[-]</button>";
+        "<li id=\"tocid\">Table of Content</li>";
 
     // searches every tag you put in here
     $("h1, h2, h3, h4, h5, h6").each(function() {
@@ -253,6 +293,8 @@ function index() {
 
     $("head").prepend(style);
 
+    $('#toc').attr('onclick', 'closetoc()');
+
 }
 
 function closetoc() {
@@ -260,6 +302,7 @@ function closetoc() {
     $('#toc').attr('style', 'display: block;');
     $('h1, h2, h3, h4, h5, h6').removeAttr('id');
     $('style#indexstyle').remove();
+    $('#toc').attr('onclick', 'index()');
 }
 
 
@@ -332,15 +375,23 @@ function help() {
     // }
 }
 
+
 function fullscreen() {
-    $("#eeditor").attr("class", "fullscreen")
+    $("#eeditor").attr("class", "fullscreen");
+    $("#fullscreen").attr("onclick", "nomalscreen()");
+}
+
+
+function nomalscreen() {
+    $('#eeditor').removeAttr('class');
+    $("#fullscreen").attr("onclick", "fullscreen()");
 }
 
 
 function source() {
-     $("#holder").attr("class", "uhidden");
-     $("#holder").attr("style", "width: 100%;height: 750px;");
-     $("#eetextarea").attr("class", "hidden");
+    $("#holder").attr("class", "uhidden");
+    $("#holder").attr("style", "width: 100%;height: 750px;");
+    $("#eetextarea").attr("class", "hidden");
     $('#source').attr('onclick', 'inlineediting()');
     // $('#eetextarea').removeAttr('id');
     // $(".hidden").attr("id", "eetextarea");
@@ -354,9 +405,19 @@ function inlineediting() {
 
 
 function edit() {
+    $('#edit').attr('onclick', 'notedit()');
     $('#eetextarea').attr('contentEditable', 'true');
     $('#eebuttons2').attr('style', 'display: block;')
 }
+
+
+function notedit() {
+    $('#edit').attr('onclick', 'edit()');
+    $('#eetextarea').attr('contentEditable', 'false');
+    $('#eebuttons2').attr('style', 'display: none;')
+}
+
+// <button onclick="edit()" id="edit" title="edit this article"></button>
 
 
 function spellcheckon() {
@@ -371,6 +432,8 @@ function spellcheckoff() {
 
 $(document).ready(function() {
 
+    var MyDiv1 = document.getElementById('eetextarea');
+
     $("#bold").click(function() {
         // get the selected range
         var range = window.getSelection().getRangeAt(0);
@@ -384,8 +447,6 @@ $(document).ready(function() {
         return false;
     });
 
-
-
     $("#italic").click(function() {
         // get the selected range
         var range = window.getSelection().getRangeAt(0);
@@ -398,8 +459,6 @@ $(document).ready(function() {
         range.surroundContents(newNode);
         return false;
     });
-
-
 
     $("#underline").click(function() {
         // get the selected range
@@ -454,7 +513,7 @@ $(document).ready(function() {
         return false;
     });
 
-    // Works in fiddle(http://jsfiddle.net/c751n7du/2/), perfectly, just not here?
+    // ammount of words in the EurEditor textarea(eetextarea)
     $("div#eetextarea").on('keyup', function() {
         var value = $(this).html();
         $("textarea#holder").val(value);
