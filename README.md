@@ -17,7 +17,7 @@ Some feature that still need some polishing:
 
 ##Screenshot
 
-![EuroEditor - 0.0.2][1]
+![EuroEditor - 0.0.3][1]
 
 
-  [1]: http://i.stack.imgur.com/vx2jq.png
+  [1]: http://i.stack.imgur.com/BumRO.png
