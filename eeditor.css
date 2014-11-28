@@ -302,12 +302,6 @@ select {
     background-position: -326px -4px;
 }
 
-#spellcheckoff {
-    background-image: url("images/eetoolbar.png");
-    background-position: -359px -4px;	
-}
-
-
 .spellcheckbaroff:after {
     content: "Off";
 }
@@ -422,26 +416,43 @@ select {
 }
 
 
-div#pagefeature {
-    background-color: #f9f9f9;
+div.pagefeature {
+/*    background-color: #f9f9f9;
     border: 1px solid #cccccc;
     box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.15);
     left: 40%;
     min-width: 250px;
     padding: 25px;
     position: absolute;
-    width: auto;
+    width: auto;*/
+    height: 208px;
+    margin: -10px;
+    overflow-y: auto;
+    width: 660px;
 }
 
-#pagefeature input {
+#pagefeatures {
+    background-color: #f9f9f9;
+    border: 1px solid #cccccc;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.15);
+    left: 30%;
+    min-width: 250px;
+    min-width: 40%;
+    width: auto;
+    padding: 25px;
+    position: absolute;
+    z-index: 25;
+}
+
+#pagefeatures section input {
     float: right;
     width: 50%;
 }
 
-#pagefeature label {
+#pagefeatures section label {
     border-bottom: 1px solid #cccccc;
     float: left;
-    width: 100%;
+    width: 99%;
 }
 
 #closepagefeature {
