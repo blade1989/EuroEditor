@@ -8,17 +8,20 @@ Name        : EuroEditor.js
 
 function copyToClipboard(text) {
     window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-} 
-
-//&equiv;
-
+}
 
 function pagefeaturebutton() {
     var pageinfo =
-        "<div id=\"pagefeature\">" +
-        "<button onclick=\"closepagefeature()\" id=\"closepagefeature\" title=\"Close\">TC</button>" +
+"<article id=\"pagefeatures\" class=\"tabs\">" +
+        "<button onclick=\"closepagefeature()\" id=\"closepagefeature\" title=\"Close\">X</button>" +
 
-        "<h2 style=\"font-size:100%;margin: 0px;padding;0px\">Page Settings</h2>" +
+    "<section id=\"tab1\">" +
+        "<h2><a href=\"#tab1\">Settings</a></h2>" +
+        //"<p></p>" +
+
+        "<div class=\"pagefeature\">" +
+
+        "<b>Page Settings</b>" +
 
         "<p>enable or disable features!</p>" +
 
@@ -38,13 +41,41 @@ function pagefeaturebutton() {
         "<input type=\"checkbox\" name=\"\" value=\"comments\" checked>" +
         "</label>" +
 
-        "</div>"
+        //"<p class=\"tabnav\"><a href=\"#tab2\">next &#10151;</a></p>" +
+        "</div>" +
 
-        $("body").prepend(pageinfo);
+    "</section>" +
+    
+    "<section id=\"tab2\">" +
+        "<h2><a href=\"#tab2\">Info</a></h2>" +
+        "<div class=\"pagefeature\">" +
+        "<b>Information</b>" +
+        "<p>Fusce ullamcorper orci vel turpis vestibulum eu congue nisl euismod. Maecenas euismod, orci non tempus fermentum, leo metus lacinia lacus, nec ultrices quam ligula ac leo. Quisque tortor neque, vulputate quis ultricies ut, rhoncus mollis metus.</p>" +
+                //"<p class=\"tabnav\"><a href=\"#tab3\">next &#10151;</a></p>" +
+                "</div>" +
+    "</section>" +
+    
+    "<section id=\"tab3\">" +
+        "<h2><a href=\"#tab3\">Security</a></h2>" +
+        "<div class=\"pagefeature\">" +
+        "<b>Security</b>" +
+        "<p>Sed et diam eu ipsum scelerisque laoreet quis in nibh. Proin sodales augue lectus. Maecenas a lorem a mi congue pharetra. Sed sed risus in nisi venenatis condimentum. Donec ac consectetur arcu. Integer urna neque, rutrum at pretium eu.</p>" +
+        //"<p class=\"tabnav\"><a href=\"#tab1\">next &#10151;</a></p>" +
+        "</div>" +
+    "</section>" +
+
+"</article>"
+
+
+
+
+
+
+    $("body").prepend(pageinfo);
 }
 
 function closepagefeature() {
-    $('#pagefeature').remove()
+    $('#pagefeatures').remove()
 }
 
 function startmenu() {
@@ -378,6 +409,7 @@ function help() {
 
 function fullscreen() {
     $("#eeditor").attr("class", "fullscreen");
+    $("#eetextarea").attr("style", "max-height: 825px;");
     $("#fullscreen").attr("onclick", "nomalscreen()");
 }
 
@@ -403,9 +435,9 @@ function inlineediting() {
     $('#source').attr('onclick', 'source()');
 }
 
-
 function edit() {
     $('#edit').attr('onclick', 'notedit()');
+    $('#edit').attr('style', 'opacity: 1.0;');
     $('#eetextarea').attr('contentEditable', 'true');
     $('#eebuttons2').attr('style', 'display: block;')
 }
@@ -413,6 +445,7 @@ function edit() {
 
 function notedit() {
     $('#edit').attr('onclick', 'edit()');
+    $('#edit').attr('style', 'opacity: 0.5;');
     $('#eetextarea').attr('contentEditable', 'false');
     $('#eebuttons2').attr('style', 'display: none;')
 }
@@ -421,18 +454,23 @@ function notedit() {
 
 
 function spellcheckon() {
+    $('#spellcheck').attr('onclick', 'spellcheckoff()');
+    $('#spellcheck').attr('style', 'opacity: 1.0;');
     $('#eetextarea').attr('spellcheck', 'true');
     $('#spellcheckbaroff').attr('class', 'spellcheckbaronn');
+    $('#spellcheckbaroff').attr('title', 'Spell checker is on');
 }
 
 function spellcheckoff() {
+    $('#spellcheck').attr('onclick', 'spellcheckon()');
+    $('#spellcheck').attr('style', 'opacity: 0.50;');
+    //$('#spellcheck').removeAttr('style');
     $('#eetextarea').attr('spellcheck', 'false');
     $('#spellcheckbaroff').attr('class', 'spellcheckbaroff');
+    $('#spellcheckbaroff').attr('title', 'Spell checker is off');
 }
 
 $(document).ready(function() {
-
-    var MyDiv1 = document.getElementById('eetextarea');
 
     $("#bold").click(function() {
         // get the selected range
@@ -547,5 +585,43 @@ $(function() {
         });
 
     });
+
+});
+
+// function index() {
+
+
+
+$(document).ready(function() {
+
+
+    var index =
+        "<h2 id=\"reference\">Reference</h2>" +
+        "<ol id=\"EuroTOC\" style=\"display: block;\">";
+
+    // searches every tag you put in here
+    $("sup.cite").each(function() {
+
+        el = $(this);
+        title = el.text();
+        id = "#" + el.text().replace(/\s/g, ""); // get the content of the header tags removes spaces and puts a # in front of it.
+        hid = el.text().replace(/\s/g, ""); // get the content of the header tags
+        el.attr('id', "" + hid + ""); // applies the header content in the id tag.
+
+        newLine =
+            "<li>\n" +
+            "<a href='" + id + "' title='" + title + "' >" + title +
+            "</a>\n" +
+            "</li>\n";
+
+        index += newLine;
+
+    });
+
+    index +=
+        "</li>" +
+        "</ol>";
+
+    $(".source").prepend(index); // applies the ToC in between the body tags <body> ... </body>
 
 });
