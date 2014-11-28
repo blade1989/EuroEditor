@@ -76,6 +76,105 @@ article {
 	resize: none;
 }
 
+/* TESTING */
+
+p.tabnav {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	text-align: right;
+}
+
+p.tabnav a {
+	text-decoration: none;
+	color: #999;
+}
+
+article.tabs {
+	position: relative;
+	display: block;
+	width: 40em;
+	height: 15em;
+	margin: 2em auto;
+    background: none;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 1em auto;
+    padding: 20px;
+    max-width: 50em;
+    padding: 2em;
+    width: 80%;
+}
+
+article.tabs section {
+    background-color: #f9f9f9;
+    border-radius: 0;
+    border-top: 1px solid #454545;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    display: block;
+    height: 88%;
+    left: 0;
+    margin-top: 5px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 1.8em;
+    width: 100%;
+    z-index: 0;
+}
+
+article.tabs section:first-child {
+	z-index: 1;
+}
+
+article.tabs section h2 {
+	position: absolute;
+	font-size: 1em;
+	font-weight: normal;
+	width: 120px;
+	height: 1.8em;
+	top: -1.8em;
+	left: 10px;
+	padding: 0;
+	margin: 0;
+	color: #999;
+	background-color: #ddd;
+	border-radius: 5px 5px 0 0;
+}
+
+article.tabs section:nth-child(2) h2 {
+	left: 132px;
+}
+
+article.tabs section:nth-child(3) h2 {
+	left: 254px;
+}
+
+article.tabs section h2 a {
+	display: block;
+	width: 100%;
+	line-height: 1.8em;
+	text-align: center;
+	text-decoration: none;
+	color: inherit;
+	outline: 0 none;
+}
+
+article.tabs section,
+article.tabs section h2 {
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+article.tabs section:target,
+article.tabs section:target h2 {
+	color: #333;
+	background-color: #fff;
+	z-index: 2;
+}
+
+
 </style>
 
 </head>
@@ -109,40 +208,12 @@ article {
     // }
 //};
 
-$( "#eetextarea" ).select(function() {
-  $( "#somethingselected" ).text( "Something was selected" ).show().fadeOut( 1000 );
-});
+// $( "#eetextarea" ).select(function() {
+//   $( "#somethingselected" ).text( "Something was selected" ).show().fadeOut( 1000 );
+// });
 
 
 </script>
-
-<!-- <div id="pagefeature">
-	<button onclick="closepagefeature()" id="closepagefeature" title="Close">TC</button>
-
-<h2 style="font-size:100%;margin: 0px;padding;0px">Page Settings</h2>
-
-	<p>
-		enable or disable features!
-	</p>
-
-		<label>ToC?
-			<input type="checkbox" name="" value="ToC?">
-		</label>
-
-		<label>sidebar
-			<input type="checkbox" name="" value="sidebar">
-		</label>
-
-		<label>feedback
-			<input type="checkbox" name="" value="feedback">
-		</label>
-
-		<label>comments
-			<input type="checkbox" name="" value="comments">
-		</label>
-
-</div> -->
-
 
  <article>
 
@@ -170,7 +241,7 @@ $( "#eetextarea" ).select(function() {
 
 		<span id="spacer"></span>
 
-		<button onclick="edit()" id="edit" title="edit this article"></button>
+		<button onclick="edit()" id="edit" title="edit this article" style="opacity: 0.5;z-index: 0;"></button>
 
 		<button onclick="pdf()" id="expdf" title="Export as pdf"></button>
 		<button onclick="print()" id="print" title="Print this page"></button>
@@ -178,19 +249,22 @@ $( "#eetextarea" ).select(function() {
 
 		<span id="spacer"></span>
 
-		<button onclick="spellcheckon()" id="spellcheck" title="Turn Spell Checker on"></button>
-		<button onclick="spellcheckoff()" id="spellcheckoff" title="Turn Spell Checker Off"></button>
+		<!-- <button onclick="spellcheckon()" id="spellcheck" title="Turn Spell Checker on"></button>
+		<button onclick="spellcheckoff()" id="spellcheckoff" title="Turn Spell Checker Off"></button> -->
+
+		<button onclick="spellcheckon()" id="spellcheck" title="Turn Spell Checker on" style="opacity: 0.5;"></button>
+
 
 		<span id="spacer"></span>
 
-		<button onclick="cut()" id="cut" title="Cut the selected text"></button>
-		<button onclick="paste()" id="paste" title="Paste the copied text"></button>
-		<button onclick="copyToClipboard()" id="cp" title="Clipboard manager"></button>
+		<button onclick="cut()" id="cut" title="Cut the selected text" style="opacity: 0.5;"></button>
+		<button onclick="paste()" id="paste" title="Paste the copied text" style="opacity: 0.5;"></button>
+		<button onclick="copyToClipboard()" id="cp" title="Clipboard manager" style="opacity: 0.5;"></button>
 
 		<span id="spacer"></span>
 
-		<button onclick="revert()" id="revert" title="revert the last made changes"></button>
-		<button onclick="apply()" id="apply" title="Forward with the last made changes"></button>
+		<button onclick="revertt()" id="revert" title="revert the last made changes" style="opacity: 0.5;"></button>
+		<button onclick="apply()" id="apply" title="Forward with the last made changes" style="opacity: 0.5;"></button>
 
 
 		<span id="spacer"></span>
@@ -353,9 +427,11 @@ $( "#eetextarea" ).select(function() {
 <form action="save.php">
 
 <div id="eetextarea" class="word_count unhidden" spellcheck="false" contentEditable="false">
-	<p>
-		<b>Write</b> <i>me</i> an <u>article</u>!
-	</p>
+
+<p>
+	Write me an article!
+</p>
+
 </div>
 
 <!-- eetextarea -->
@@ -382,7 +458,7 @@ $( "#eetextarea" ).select(function() {
           
  		| 
 
-			<span id="spellcheckbaroff" title="Spell check on/off" class="spellcheckbaroff">Spellcheck: </span>  
+			<span id="spellcheckbaroff" title="Spell checker is off" class="spellcheckbaroff">Spellcheck: </span>  
 		</div>     
 
 </div> <!-- eeditor -->
