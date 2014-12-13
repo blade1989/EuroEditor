@@ -12,75 +12,138 @@ function copyToClipboard(text) {
 
 function pagefeaturebutton() {
     var pageinfo =
-"<article id=\"pagefeatures\" class=\"tabs\">" +
-        "<button onclick=\"closepagefeature()\" id=\"closepagefeature\" title=\"Close\">X</button>" +
+    "<div id=\"settingswindow\">" +
 
-    "<section id=\"tab1\">" +
-        "<h2><a href=\"#tab1\">Settings</a></h2>" +
-        //"<p></p>" +
+        "<button onclick=\"closesettingswindow()\" id=\"closesettingswindow\">X</button>" +
 
-        "<div class=\"pagefeature\">" +
+        "<div id=\"settingstab\">" +
+
+        "<button id=\"infotab\" onclick=\"info()\">info</button>" +
+
+        "<button id=\"settingstab\" onclick=\"settings()\">settings</button>" +
+
+        "</div>" +
+
+        "<section id=\"settings\">" +
 
         "<b>Page Settings</b>" +
 
         "<p>enable or disable features!</p>" +
 
         "<label title=\"This will display a toc button in the article(position relative)\">ToC?" +
-        "<input type=\"checkbox\" name=\"\" value=\"ToC?\">" +
+            "<input type=\"checkbox\" name=\"\" value=\"ToC?\">" +
         "</label>" +
+
 
         "<label title=\"This will display the sidebar\">sidebar" +
-        "<input type=\"checkbox\" name=\"\" value=\"sidebar\" checked>" +
-        " </label>" +
+            "<input type=\"checkbox\" name=\"\" value=\"sidebar\" checked>" +
+        "</label>" +
+
 
         "<label title=\"This will allow users to give feedback in the article\">feedback" +
-        "<input type=\"checkbox\" name=\"\" value=\"feedback\" checked>" +
+            "<input type=\"checkbox\" name=\"\" value=\"feedback\" checked>" +
         "</label>" +
+
 
         "<label title=\"Allow for users to comment in the comment box\">comments" +
-        "<input type=\"checkbox\" name=\"\" value=\"comments\" checked>" +
+            "<input type=\"checkbox\" name=\"\" value=\"comments\" checked>" +
         "</label>" +
 
-        //"<p class=\"tabnav\"><a href=\"#tab2\">next &#10151;</a></p>" +
-        "</div>" +
+        "</section>" +
 
-    "</section>" +
-    
-    "<section id=\"tab2\">" +
-        "<h2><a href=\"#tab2\">Info</a></h2>" +
-        "<div class=\"pagefeature\">" +
-        "<b>Information</b>" +
-        "<p>Fusce ullamcorper orci vel turpis vestibulum eu congue nisl euismod. Maecenas euismod, orci non tempus fermentum, leo metus lacinia lacus, nec ultrices quam ligula ac leo. Quisque tortor neque, vulputate quis ultricies ut, rhoncus mollis metus.</p>" +
-                //"<p class=\"tabnav\"><a href=\"#tab3\">next &#10151;</a></p>" +
-                "</div>" +
-    "</section>" +
-    
-    "<section id=\"tab3\">" +
-        "<h2><a href=\"#tab3\">Security</a></h2>" +
-        "<div class=\"pagefeature\">" +
-        "<b>Security</b>" +
-        "<p>Sed et diam eu ipsum scelerisque laoreet quis in nibh. Proin sodales augue lectus. Maecenas a lorem a mi congue pharetra. Sed sed risus in nisi venenatis condimentum. Donec ac consectetur arcu. Integer urna neque, rutrum at pretium eu.</p>" +
-        //"<p class=\"tabnav\"><a href=\"#tab1\">next &#10151;</a></p>" +
-        "</div>" +
-    "</section>" +
+        "<section id=\"info\" style=\"display: block;\">" +
 
-"</article>"
+            "<form>" +
+                "<label for=\"author\">Author: " +
+                    "<input type=\"text\" value=\"Imri Paloja\" id=\"author\" disabled>" +
+                "</label>" +
 
+                "<br>" +
 
+                "<label for=\"articletitle\">Name: " +
+                    "<input type=\"text\" value=\"blah\" id=\"articletitle\">" +
+                "</label>" +
 
+                "<br>" +
 
+                "<label for=\"type\">Type: " +
+                    "<input type=\"text\" value=\"Article\" id=\"type\">" +
+                "</label>" +
 
+                "<br>" +
+
+                "<label for=\"size\">Size: " +
+                    "<input type=\"text\" value=\"21.05KB\" id=\"size\">" +
+                "</label>" +
+
+                "<br>" +
+
+                "<label for=\"location\">Location: " +
+                    "<input type=\"text\" value=\"/tutorials/blah.php\" id=\"location\">" +
+                "</label>" +
+
+                "<br>" +
+
+                "<label for=\"standaard\">Standaard: " +
+                    "<input type=\"text\" value=\"HTML5\" id=\"standaard\">" +
+                "</label>" +
+
+                "<br>" +
+
+                "<label for=\"modified\">Modified: " +
+                    "<input type=\"text\" value=\"13-12-2014 02:55\" id=\"modified\">" +
+                "</label>" +
+
+                "<br>" +
+
+                "<label for=\"creation\">creation:" +
+                    "<input type=\"text\" value=\"13-12-2014\" id=\"creation\">" +
+                "</label>" +
+
+                "<br>" +
+
+                "<label for=\"wordcount\">Words: " +
+                    "<input type=\"text\" value=\"456\" id=\"wordcount\">" +
+                "</label>" +
+
+                "<br>" +
+
+                "<label for=\"language\">Language: " +
+                    "<input type=\"text\" value=\"English\" id=\"language\">" +
+                "</label>" +
+
+                "<br>" +
+
+            "</form>" +
+        "</section>" +
+    "</div>";
 
     $("body").prepend(pageinfo);
 }
 
-function closepagefeature() {
-    $('#pagefeatures').remove()
+
+function settings() {
+    // $('#settingstab').attr("class", "active");
+    // $('#infotab').removeAttr("class");
+    $('#info').attr("style","display: none;");
+    $('#settings').attr("style","display: block;");
+
+}
+
+function info() {
+    // $('#settingstab').removeAttr("class");
+    // $('#infotab').attr("class", "active");
+    $('#info').attr("style","display: block;");
+    $('#settings').attr("style","display: none;"); 
+}
+
+function closesettingswindow() {
+    $('#settingswindow').remove();
 }
 
 function startmenu() {
     $('#startmenu').attr('style', 'display: block;');
-    $('#cancel').attr('style', 'display: block;');
+    $('#cancel').attr('style', 'display: none;');
 
     $('#eetextarea').attr('style', 'display: none;');
     $('article').attr('style', 'height: 500px;');
@@ -325,12 +388,13 @@ function index() {
     $("head").prepend(style);
 
     $('#toc').attr('onclick', 'closetoc()');
+    $('#toc').attr('style', 'display: background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;;');
 
 }
 
 function closetoc() {
     $("#EuroTOC").remove();
-    $('#toc').attr('style', 'display: block;');
+    $('#toc').removeAttr('style');
     $('h1, h2, h3, h4, h5, h6').removeAttr('id');
     $('style#indexstyle').remove();
     $('#toc').attr('onclick', 'index()');
@@ -421,6 +485,7 @@ function nomalscreen() {
 
 
 function source() {
+    $('#source').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
     $("#holder").attr("class", "uhidden");
     $("#holder").attr("style", "width: 100%;height: 750px;");
     $("#eetextarea").attr("class", "hidden");
@@ -433,6 +498,7 @@ function inlineediting() {
     $('#holder').attr('class', 'hidden');
     $('#eetextarea').attr('class', 'unhidden');
     $('#source').attr('onclick', 'source()');
+    $('#source').removeAttr('style');
 }
 
 function edit() {
@@ -551,42 +617,45 @@ $(document).ready(function() {
         return false;
     });
 
-    // ammount of words in the EurEditor textarea(eetextarea)
+    // ammount of words in the EuroEditor textarea(eetextarea)
     $("div#eetextarea").on('keyup', function() {
         var value = $(this).html();
         $("textarea#holder").val(value);
     })
         .trigger('keyup');
 
+    // function copy() {
+    //     document.getElementById("holder").innerHTML = document.getElementById("eetextarea").value
+    // }
 
 });
 
 
 // how many words used in the document
-function word_count(field) {
-    var number = 0;
-    var matches = $(field).val().split(" ");
-    var original_num = parseInt($('#holder').val());
+// function word_count(field) {
+//     var number = 0;
+//     var matches = $(field).val().split(" ");
+//     var original_num = parseInt($('#holder').val());
 
-    number = matches.filter(function(word) {
-        return word.length > 0;
-    }).length;
+//     number = matches.filter(function(word) {
+//         return word.length > 0;
+//     }).length;
 
-    $('#words').val(number);
-}
+//     $('#words').val(number);
+// }
 
-$(function() {
-    $("#holder").each(function() {
-        var input = '#' + this.id;
-        word_count(input);
+// $(function() {
+//     $("#holder").each(function() {
+//         var input = '#' + this.id;
+//         word_count(input);
 
-        $(this).keyup(function() {
-            word_count(input);
-        });
+//         $(this).keyup(function() {
+//             word_count(input);
+//         });
 
-    });
+//     });
 
-});
+// });
 
 // function index() {
 
@@ -625,3 +694,62 @@ $(document).ready(function() {
     $(".source").prepend(index); // applies the ToC in between the body tags <body> ... </body>
 
 });
+
+function unprintablecharachters() {
+    //$('#unprintablecharachters').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
+    $('#unprintablecharachters').attr('onclick', 'unprintablecharachtersoff()');
+    var unprintablecharachters =
+        "<style id=\"unprintablecharachters\">" +
+        "#eetextarea p:after, #eetextarea h1:after, #eetextarea h2:after, #eetextarea h3:after, #eetextarea h4:after, #eetextarea h5:after, #eetextarea h6:after {" +
+        "content: \"¶\";" +
+        "}" +
+        "</style>";
+
+    $("head").prepend(unprintablecharachters);
+}
+
+function unprintablecharachtersoff() {
+    $('#unprintablecharachters').removeAttr("style");
+    $('#unprintablecharachters').remove('style#unprintablecharachters');
+    $('#unprintablecharachters').attr('onclick', 'unprintablecharachters()');
+}
+
+// function quickbar() {
+//     var pageinfo =
+
+// "<div id=\"quickbar\">" +
+
+//     "<select title=\"style\" id=\"style\">" +
+//         "<option value=\"paragraph\">parargraph</option>" +
+//         "<option value=\"H1\">header 1</option>" +
+//         "<option value=\"H2\">header 2</option>" +
+//         "<option value=\"H3\">header 3</option>" +
+//         "<option value=\"blockquote\" id=\"blockquote\" onclick=\"blockquote()\">blockquote</option>" +
+//         "<option value=\"code\" id=\"code\" onclick=\"code()\">code</option>" +
+//     "</select>" +
+
+//     "<select title=\"font-family\">" +
+//         "<option value=\"liberation-serif\">Liberation Serif</option>" +
+//         "<option value=\"serif\">serif</option>" +
+//         "<option value=\"sans-serif\" id=\"sans-serif\">sans-serif</option>" +
+//         "<option value=\"times-new-roman\">Times New Roman</option>" +
+//     "</select>" +
+
+//     "<select title=\"font-size\">" +
+//         "<option value=\"onepx\">1px</option>" +
+//         "<option value=\"twopx\">2px</option>" +
+//         "<option value=\"fourpx\">4px</option>" +
+//         "<option value=\"eightpx\">8px</option>" +
+//         "<option value=\"sixteenpx\" selected>16px</option>" +
+//         "<option value=\"twentyeightpx\">28px</option>" +
+//     "</select>" +
+
+//     "<button id=\"bold\" title=\"Bold selected text\">B</button>" +
+//     "<button id=\"italic\" title=\"Italic selected text\">I</button>" +
+//     "<button id=\"underline\" title=\"Underlin selected text\">U</button>" +
+
+// "</div>";
+
+
+//     $("body").prepend(pageinfo);
+// }
