@@ -37,7 +37,7 @@ For your pleasure. Go ahead and test it out.
  - Source Code Editing
  - MarkDown Editor(Not yet implemented)
  - Dynamic Table Of Content of the current Headers
- - Settings Window -≡- for now read only mode:
+ - Settings Window -`&equiv;` - for now read only mode:
   - Info(Information about the current article)
   - Settings for the current document!
  - Unprintable Charachters
