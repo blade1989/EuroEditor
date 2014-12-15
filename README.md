@@ -31,7 +31,7 @@ For your pleasure. Go ahead and test it out.
  - Turn Client(web browser) Spell Checker on off
  - Clip Board Manager(Not yet implemented). Will probably be used in combination with the UNDO/REDO button.
  - Undo/Redo(Not fully functional)
- - Zen Mode: Max height, max Width: button[F]
+ - Zen Mode: Max height, max Width: button`[F]`
  - Full screen mode, HTML5 api
  - Rich Text Editing
  - Source Code Editing
@@ -41,13 +41,13 @@ For your pleasure. Go ahead and test it out.
   - Info(Information about the current article)
   - Settings for the current document!
  - Unprintable Charachters
- - Styling of words: B, I, U, Align left, Align center, Align right, Align Justified
+ - Styling of words: `B`, `I`, `U`, `Align left`, `Align center`, `Align right`, `Align Justified`
  - Ubuntu Smileys(Need to upload the png/svg)
  - Reference Module(Work In Progress)
   - Insert Reference button
-  - There will be a Reference section at the bottom of the page with all your inserted reference.
+    - There will be a Reference section at the bottom of the page with all your inserted reference.
   - In case of dead link, the module will try to save the page using the Way Back Machine
-  - Alternatively to using the Way Back Machine in case of the link going dead, it will try to make a screenshot of the section quoted(http://www.example.com/example#section)
+  - Alternatively to using the Way Back Machine in case of the link going dead, it will try to make a screenshot of the section quoted(`http://www.example.com/example#section`)
 
 ##Screenshot
 
