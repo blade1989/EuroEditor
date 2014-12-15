@@ -5,9 +5,9 @@ EuroEditor, Your free, easy to use, and customizable web based editor
 
 ---
 
-EuroEditor - at the time of writing - is a unfinished product. Inspired by [Libreoffice - Writer ](https://en.wikipedia.org/wiki/LibreOffice_Writer "LibreOffice Writer - Wikipedia, the free encyclopedia").
+EuroEditor - at the time of writing - is a unfinished product. Inspired by [Libreoffice - Writer ](https://en.wikipedia.org/wiki/LibreOffice_Writer "LibreOffice Writer - Wikipedia, the free encyclopedia"). This will be the default web-based editor of [EuroCMS](https://github.com/blade1989/EuroCMS)!
 
-This will be the default web-based editor of [EuroCMS](https://github.com/blade1989/EuroCMS)!
+Written in HTML5, CSS3, Jquery. 
 
 ##[Real live demo of EuroEditor](http://www.eurobytes.nl/demos/EuroEditor/)
 
@@ -50,8 +50,6 @@ For your pleasure. Go ahead and test it out.
   - On top of that, in case of the link going dead, it will try to make a screenshot of the section quoted(`http://www.example.com/example#section`)
 
 ##Screenshot
-
-This is just the frontend, using HTML5, CSS3, Jquery. 
 
 ![EuroEditor - 0.0.4][1]
 
