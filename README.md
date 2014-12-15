@@ -27,4 +27,4 @@ This is just the frontend, using HTML5, CSS3, Jquery.
 ![EuroEditor - 0.0.3][1]
 
 
-  [1]: http://i.imgur.com/iLHEtau.png
+  [1]: https://i.imgur.com/MTvnCMQ.png
