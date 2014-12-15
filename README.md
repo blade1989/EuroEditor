@@ -17,8 +17,8 @@ For your pleasure. Go ahead and test it out.
  Some Feature that are working, or close to
 
  - Browse Button(Currently read Only)
- - MEGA(service)
- - Dropbox (service)
+  - MEGA(service)
+  - Dropbox (service)
   - OneDrive
   - Local. Files on your server, which EuroEditor is on.
   - Search. For searching files you put on Mega, Dropbox, OneDrive and on your local server.
