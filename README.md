@@ -46,8 +46,8 @@ For your pleasure. Go ahead and test it out.
  - Reference Module(Work In Progress)
   - Insert Reference button
     - There will be a Reference section at the bottom of the page with all your inserted reference.
-  - In case of dead link, the module will try to save the page using the Way Back Machine
-  - Alternatively to using the Way Back Machine in case of the link going dead, it will try to make a screenshot of the section quoted(`http://www.example.com/example#section`)
+  - In case of the link going dead, the module will try to save the page using the [Way Back Machine](https://archive.org/web/web.php), at first time of adding the source link.
+  - On top of that, in case of the link going dead, it will try to make a screenshot of the section quoted(`http://www.example.com/example#section`)
 
 ##Screenshot
 
