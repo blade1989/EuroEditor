@@ -5,7 +5,7 @@ EuroEditor, Your free, easy to use, and customizable web based editor
 
 ---
 
-EuroEditor - at the time of writing - is a not finished product. Inspired by [Libreoffice - Writer ](https://en.wikipedia.org/wiki/LibreOffice_Writer "LibreOffice Writer - Wikipedia, the free encyclopedia").
+EuroEditor - at the time of writing - is a unfinished product. Inspired by [Libreoffice - Writer ](https://en.wikipedia.org/wiki/LibreOffice_Writer "LibreOffice Writer - Wikipedia, the free encyclopedia").
 
 This will be the default web-based editor of [EuroCMS](https://github.com/blade1989/EuroCMS)!
 
@@ -24,7 +24,7 @@ For your pleasure. Go ahead and test it out.
   - Search. For searching files you put on Mega, Dropbox, OneDrive and on your local server.
   - Template. Choose a template, for the article your about to write.
  - Import documents, to post as articles(Not yet implemented).
- - Mail the link, and ot entire article(Not yet implemented)
+ - Mail the link, and or entire article(Not yet implemented)
  - Edit Mode/Read only mode
  - Export article as PDF(Not yet implemented)
  - Print the article(Not fully implemented)
