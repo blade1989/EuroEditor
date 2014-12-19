@@ -36,7 +36,7 @@ For your pleasure. Go ahead and test it out.
  - Rich Text Editing
  - Source Code Editing
  - MarkDown Editor(Not yet implemented)
- - Dynamic Table Of Content of the current Headers
+ - Dynamic Table Of Content of the current Headers: [jquery.toc.js](https://github.com/blade1989/jquery.toc.js)
  - Settings Window - `≡`(`&equiv;`) - for now read only mode:
   - Info(Information about the current article)
   - Settings for the current document!
