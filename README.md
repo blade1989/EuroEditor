@@ -51,7 +51,7 @@ For your pleasure. Go ahead and test it out.
 
 ##Screenshot
 
-![EuroEditor - 0.0.4][1]
+![EuroEditor - 0.0.5][1]
 
 
-  [1]: https://i.imgur.com/MTvnCMQ.png
+  [1]: http://i.stack.imgur.com/42N6h.png
