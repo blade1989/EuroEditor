@@ -12,9 +12,9 @@ function copyToClipboard(text) {
 
 function pagefeaturebutton() {
     var pageinfo =
-    "<div id=\"settingswindow\">" +
+        "<div id=\"settingswindow\">" +
 
-        "<button onclick=\"closesettingswindow()\" id=\"closesettingswindow\">X</button>" +
+        "<button onclick=\"closesettingswindow()\" id=\"closesettingswindow\"><i class=\"fa fa-times\"></i></button>" +
 
         "<div id=\"settingstab\">" +
 
@@ -31,92 +31,94 @@ function pagefeaturebutton() {
         "<p>enable or disable features!</p>" +
 
         "<label title=\"This will display a toc button in the article(position relative)\">ToC?" +
-            "<input type=\"checkbox\" name=\"\" value=\"ToC?\">" +
+        "<input type=\"checkbox\" name=\"\" value=\"ToC?\">" +
         "</label>" +
 
 
         "<label title=\"This will display the sidebar\">sidebar" +
-            "<input type=\"checkbox\" name=\"\" value=\"sidebar\" checked>" +
+        "<input type=\"checkbox\" name=\"\" value=\"sidebar\" checked>" +
         "</label>" +
 
 
         "<label title=\"This will allow users to give feedback in the article\">feedback" +
-            "<input type=\"checkbox\" name=\"\" value=\"feedback\" checked>" +
+        "<input type=\"checkbox\" name=\"\" value=\"feedback\" checked>" +
         "</label>" +
 
 
         "<label title=\"Allow for users to comment in the comment box\">comments" +
-            "<input type=\"checkbox\" name=\"\" value=\"comments\" checked>" +
+        "<input type=\"checkbox\" name=\"\" value=\"comments\" checked>" +
         "</label>" +
 
         "</section>" +
 
         "<section id=\"info\" style=\"display: block;\">" +
 
-            "<form>" +
-                "<label for=\"author\">Author: " +
-                    "<input type=\"text\" value=\"Imri Paloja\" id=\"author\" disabled>" +
-                "</label>" +
+        "<form>" +
+        "<label for=\"author\">Author: " +
+        "<input type=\"text\" value=\"Imri Paloja\" id=\"author\" disabled>" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"articletitle\">Name: " +
-                    "<input type=\"text\" value=\"blah\" id=\"articletitle\">" +
-                "</label>" +
+        "<label for=\"articletitle\">Name: " +
+        "<input type=\"text\" value=\"blah\" id=\"articletitle\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"type\">Type: " +
-                    "<input type=\"text\" value=\"Article\" id=\"type\">" +
-                "</label>" +
+        "<label for=\"type\">Type: " +
+        "<input type=\"text\" value=\"Article\" id=\"type\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"size\">Size: " +
-                    "<input type=\"text\" value=\"21.05KB\" id=\"size\">" +
-                "</label>" +
+        "<label for=\"size\">Size: " +
+        "<input type=\"text\" value=\"21.05KB\" id=\"size\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"location\">Location: " +
-                    "<input type=\"text\" value=\"/tutorials/blah.php\" id=\"location\">" +
-                "</label>" +
+        "<label for=\"location\">Location: " +
+        "<input type=\"text\" value=\"/tutorials/blah.php\" id=\"location\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"standaard\">Standaard: " +
-                    "<input type=\"text\" value=\"HTML5\" id=\"standaard\">" +
-                "</label>" +
+        "<label for=\"standaard\">Standaard: " +
+        "<input type=\"text\" value=\"HTML5\" id=\"standaard\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"modified\">Modified: " +
-                    "<input type=\"text\" value=\"13-12-2014 02:55\" id=\"modified\">" +
-                "</label>" +
+        "<label for=\"modified\">Modified: " +
+        "<input type=\"text\" value=\"13-12-2014 02:55\" id=\"modified\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"creation\">creation:" +
-                    "<input type=\"text\" value=\"13-12-2014\" id=\"creation\">" +
-                "</label>" +
+        "<label for=\"creation\">creation:" +
+        "<input type=\"text\" value=\"13-12-2014\" id=\"creation\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"wordcount\">Words: " +
-                    "<input type=\"text\" value=\"456\" id=\"wordcount\">" +
-                "</label>" +
+        "<label for=\"wordcount\">Words: " +
+        "<input type=\"text\" value=\"456\" id=\"wordcount\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-                "<label for=\"language\">Language: " +
-                    "<input type=\"text\" value=\"English\" id=\"language\">" +
-                "</label>" +
+        "<label for=\"language\">Language: " +
+        "<input type=\"text\" value=\"English\" id=\"language\">" +
+        "</label>" +
 
-                "<br>" +
+        "<br>" +
 
-            "</form>" +
+        "<input type=\"submit\" name=\"\" value=\"submit\">" +
+
+        "</form>" +
         "</section>" +
-    "</div>";
+        "</div>";
 
     $("body").prepend(pageinfo);
 }
@@ -125,16 +127,16 @@ function pagefeaturebutton() {
 function settings() {
     // $('#settingstab').attr("class", "active");
     // $('#infotab').removeAttr("class");
-    $('#info').attr("style","display: none;");
-    $('#settings').attr("style","display: block;");
+    $('#info').attr("style", "display: none;");
+    $('#settings').attr("style", "display: block;");
 
 }
 
 function info() {
     // $('#settingstab').removeAttr("class");
     // $('#infotab').attr("class", "active");
-    $('#info').attr("style","display: block;");
-    $('#settings').attr("style","display: none;"); 
+    $('#info').attr("style", "display: block;");
+    $('#settings').attr("style", "display: none;");
 }
 
 function closesettingswindow() {
@@ -251,11 +253,7 @@ function blockquote() {
     }
 }
 
-
 // $( "#style" ).val();
-
-
-
 function index() {
     var index =
         "<ul id=\"EuroTOC\" style=\"display: block;\">" +
@@ -473,6 +471,7 @@ function help() {
 
 function fullscreen() {
     $("#eeditor").attr("class", "fullscreen");
+    $('#fullscreen').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
     $("#eetextarea").attr("style", "max-height: 825px;");
     $("#fullscreen").attr("onclick", "nomalscreen()");
 }
@@ -481,22 +480,29 @@ function fullscreen() {
 function nomalscreen() {
     $('#eeditor').removeAttr('class');
     $("#fullscreen").attr("onclick", "fullscreen()");
+    $("#fullscreen").removeAttr('style');
 }
 
 
 function source() {
     $('#source').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
-    $("#holder").attr("class", "uhidden");
-    $("#holder").attr("style", "width: 100%;height: 750px;");
-    $("#eetextarea").attr("class", "hidden");
+    // $("#holder").attr("class", "uhidden");
+    // $("#holder").attr("style", "width: 100%;height: 750px;");
+    // $("#eetextarea").attr("class", "hidden");
     $('#source').attr('onclick', 'inlineediting()');
+    $('#eetextarea').replaceWith("<textarea id=\"holder\" onchange=\"copy();\">" + $('#eetextarea').html() + "</textarea>");
+
     // $('#eetextarea').removeAttr('id');
     // $(".hidden").attr("id", "eetextarea");
 }
 
 function inlineediting() {
-    $('#holder').attr('class', 'hidden');
-    $('#eetextarea').attr('class', 'unhidden');
+    // $('#holder').attr('class', 'hidden');
+    // $('#eetextarea').attr('class', 'unhidden');
+
+    $('#holder').replaceWith("<div id=\"eetextarea\" class=\"word_count unhidden\" contenteditable=\"false\" onchange=\"copy();\" spellcheck=\"false\">" + $('#holder').text() + "</div>");
+
+
     $('#source').attr('onclick', 'source()');
     $('#source').removeAttr('style');
 }
@@ -535,6 +541,15 @@ function spellcheckoff() {
     $('#spellcheckbaroff').attr('class', 'spellcheckbaroff');
     $('#spellcheckbaroff').attr('title', 'Spell checker is off');
 }
+
+function custominput() {
+    $('#font-size').replaceWith('<input type="number" name="" value="' + $('#font-size selected').text() + '" max="100" min="0" placeholder="" id="custominput">');
+
+
+
+}
+
+
 
 $(document).ready(function() {
 
@@ -620,7 +635,7 @@ $(document).ready(function() {
     // ammount of words in the EuroEditor textarea(eetextarea)
     $("div#eetextarea").on('keyup', function() {
         var value = $(this).html();
-        $("textarea#holder").val(value);
+        $("#eetextarea#holder").val(value);
     })
         .trigger('keyup');
 
@@ -628,128 +643,170 @@ $(document).ready(function() {
     //     document.getElementById("holder").innerHTML = document.getElementById("eetextarea").value
     // }
 
-});
+    $("#prettyprint").click(function() {
+        // get the selected range
+        var range = window.getSelection().getRangeAt(0);
 
+        // create a new DOM node and set it's style property to red 
+        var newNode = document.createElement('pre');
+        newNode.class = "prettyprint";
 
-// how many words used in the document
-// function word_count(field) {
-//     var number = 0;
-//     var matches = $(field).val().split(" ");
-//     var original_num = parseInt($('#holder').val());
-
-//     number = matches.filter(function(word) {
-//         return word.length > 0;
-//     }).length;
-
-//     $('#words').val(number);
-// }
-
-// $(function() {
-//     $("#holder").each(function() {
-//         var input = '#' + this.id;
-//         word_count(input);
-
-//         $(this).keyup(function() {
-//             word_count(input);
-//         });
-
-//     });
-
-// });
-
-// function index() {
-
-
-
-$(document).ready(function() {
-
-
-    var index =
-        "<h2 id=\"reference\">Reference</h2>" +
-        "<ol id=\"EuroTOC\" style=\"display: block;\">";
-
-    // searches every tag you put in here
-    $("sup.cite").each(function() {
-
-        el = $(this);
-        title = el.text();
-        id = "#" + el.text().replace(/\s/g, ""); // get the content of the header tags removes spaces and puts a # in front of it.
-        hid = el.text().replace(/\s/g, ""); // get the content of the header tags
-        el.attr('id', "" + hid + ""); // applies the header content in the id tag.
-
-        newLine =
-            "<li>\n" +
-            "<a href='" + id + "' title='" + title + "' >" + title +
-            "</a>\n" +
-            "</li>\n";
-
-        index += newLine;
-
+        // surround the selection with the new span tag 
+        range.surroundContents(newNode);
+        return false;
     });
 
-    index +=
-        "</li>" +
-        "</ol>";
-
-    $(".source").prepend(index); // applies the ToC in between the body tags <body> ... </body>
 
 });
 
-function unprintablecharachters() {
-    //$('#unprintablecharachters').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
-    $('#unprintablecharachters').attr('onclick', 'unprintablecharachtersoff()');
-    var unprintablecharachters =
-        "<style id=\"unprintablecharachters\">" +
-        "#eetextarea p:after, #eetextarea h1:after, #eetextarea h2:after, #eetextarea h3:after, #eetextarea h4:after, #eetextarea h5:after, #eetextarea h6:after {" +
-        "content: \"¶\";" +
-        "}" +
-        "</style>";
-
-    $("head").prepend(unprintablecharachters);
-}
-
-function unprintablecharachtersoff() {
-    $('#unprintablecharachters').removeAttr("style");
-    $('#unprintablecharachters').remove('style#unprintablecharachters');
-    $('#unprintablecharachters').attr('onclick', 'unprintablecharachters()');
-}
-
-// function quickbar() {
-//     var pageinfo =
-
-// "<div id=\"quickbar\">" +
-
-//     "<select title=\"style\" id=\"style\">" +
-//         "<option value=\"paragraph\">parargraph</option>" +
-//         "<option value=\"H1\">header 1</option>" +
-//         "<option value=\"H2\">header 2</option>" +
-//         "<option value=\"H3\">header 3</option>" +
-//         "<option value=\"blockquote\" id=\"blockquote\" onclick=\"blockquote()\">blockquote</option>" +
-//         "<option value=\"code\" id=\"code\" onclick=\"code()\">code</option>" +
-//     "</select>" +
-
-//     "<select title=\"font-family\">" +
-//         "<option value=\"liberation-serif\">Liberation Serif</option>" +
-//         "<option value=\"serif\">serif</option>" +
-//         "<option value=\"sans-serif\" id=\"sans-serif\">sans-serif</option>" +
-//         "<option value=\"times-new-roman\">Times New Roman</option>" +
-//     "</select>" +
-
-//     "<select title=\"font-size\">" +
-//         "<option value=\"onepx\">1px</option>" +
-//         "<option value=\"twopx\">2px</option>" +
-//         "<option value=\"fourpx\">4px</option>" +
-//         "<option value=\"eightpx\">8px</option>" +
-//         "<option value=\"sixteenpx\" selected>16px</option>" +
-//         "<option value=\"twentyeightpx\">28px</option>" +
-//     "</select>" +
-
-//     "<button id=\"bold\" title=\"Bold selected text\">B</button>" +
-//     "<button id=\"italic\" title=\"Italic selected text\">I</button>" +
-//     "<button id=\"underline\" title=\"Underlin selected text\">U</button>" +
-
-// "</div>";
 
 
-//     $("body").prepend(pageinfo);
-// }
+
+
+
+        // function prettyprint() {
+        //     var prettycode = prompt("Insert code", "<?php echo \"$kaas\" ?>");
+
+
+        //     if (prettyprint != null) {
+        //         document.getElementById("eetextarea").innerHTML =
+        //             "\n<pre class=\"prettyprint\">\n" + prettycode +  "\n</pre>\n";
+        //     }
+        // }
+
+        // how many words used in the document
+        // function word_count(field) {
+        //     var number = 0;
+        //     var matches = $(field).val().split(" ");
+        //     var original_num = parseInt($('#holder').val());
+
+        //     number = matches.filter(function(word) {
+        //         return word.length > 0;
+        //     }).length;
+
+        //     $('#words').val(number);
+        // }
+
+        // $(function() {
+        //     $("#holder").each(function() {
+        //         var input = '#' + this.id;
+        //         word_count(input);
+
+        //         $(this).keyup(function() {
+        //             word_count(input);
+        //         });
+
+        //     });
+
+        // });
+
+        // function index() {
+
+
+
+        $(document).ready(function() {
+
+
+            var index =
+                "<h2 id=\"reference\">Reference</h2>" +
+                "<ol id=\"EuroTOC\" style=\"display: block;\">";
+
+            // searches every tag you put in here
+            $("sup.cite").each(function() {
+
+                el = $(this);
+                title = el.text();
+                id = "#" + el.text().replace(/\s/g, ""); // get the content of the header tags removes spaces and puts a # in front of it.
+                hid = el.text().replace(/\s/g, ""); // get the content of the header tags
+                el.attr('id', "" + hid + ""); // applies the header content in the id tag.
+
+                newLine =
+                    "<li>\n" +
+                    "<a href='" + id + "' title='" + title + "' >" + title +
+                    "</a>\n" +
+                    "</li>\n";
+
+                index += newLine;
+
+            });
+
+            index +=
+                "</li>" +
+                "</ol>";
+
+            $(".source").prepend(index); // applies the ToC in between the body tags <body> ... </body>
+
+        });
+
+        function unprintablecharachters() {
+            //$('#unprintablecharachters').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
+            $('#unprintablecharachters').attr('onclick', 'unprintablecharachtersoff()');
+            var unprintablecharachters =
+                "<style id=\"unprintablecharachters\">" +
+                "#eetextarea p:after, #eetextarea h1:after, #eetextarea h2:after, #eetextarea h3:after, #eetextarea h4:after, #eetextarea h5:after, #eetextarea h6:after {" +
+                "content: \"Â¶\";" +
+                "}" +
+
+                ".line-break:after {" +
+                "content: \"â†µ\";" +
+                "font-size: 15px;" +
+                "font-weight: 900;" +
+                "display: inline-block;"
+            "}" +
+
+            "</style>";
+
+            $("head").prepend(unprintablecharachters);
+
+            $('#eetextarea').remove('br');
+
+            $("#eetextarea p br").replaceWith('<div class="line-break"></div>');
+
+        }
+
+        function unprintablecharachtersoff() {
+            $('#unprintablecharachters').removeAttr("style");
+            $('#unprintablecharachters').remove('style#unprintablecharachters');
+            $('#unprintablecharachters').attr('onclick', 'unprintablecharachters()');
+            $('div.line-break').replaceWith('<br>');
+        }
+
+        // function quickbar() {
+        //     var pageinfo =
+
+        // "<div id=\"quickbar\">" +
+
+        //     "<select title=\"style\" id=\"style\">" +
+        //         "<option value=\"paragraph\">parargraph</option>" +
+        //         "<option value=\"H1\">header 1</option>" +
+        //         "<option value=\"H2\">header 2</option>" +
+        //         "<option value=\"H3\">header 3</option>" +
+        //         "<option value=\"blockquote\" id=\"blockquote\" onclick=\"blockquote()\">blockquote</option>" +
+        //         "<option value=\"code\" id=\"code\" onclick=\"code()\">code</option>" +
+        //     "</select>" +
+
+        //     "<select title=\"font-family\">" +
+        //         "<option value=\"liberation-serif\">Liberation Serif</option>" +
+        //         "<option value=\"serif\">serif</option>" +
+        //         "<option value=\"sans-serif\" id=\"sans-serif\">sans-serif</option>" +
+        //         "<option value=\"times-new-roman\">Times New Roman</option>" +
+        //     "</select>" +
+
+        //     "<select title=\"font-size\">" +
+        //         "<option value=\"onepx\">1px</option>" +
+        //         "<option value=\"twopx\">2px</option>" +
+        //         "<option value=\"fourpx\">4px</option>" +
+        //         "<option value=\"eightpx\">8px</option>" +
+        //         "<option value=\"sixteenpx\" selected>16px</option>" +
+        //         "<option value=\"twentyeightpx\">28px</option>" +
+        //     "</select>" +
+
+        //     "<button id=\"bold\" title=\"Bold selected text\">B</button>" +
+        //     "<button id=\"italic\" title=\"Italic selected text\">I</button>" +
+        //     "<button id=\"underline\" title=\"Underlin selected text\">U</button>" +
+
+        // "</div>";
+
+
+        //     $("body").prepend(pageinfo);
+        // }
