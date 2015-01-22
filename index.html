@@ -32,24 +32,31 @@ Name 		: EuroEditor
 
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     <script type="text/javascript" src="eeditor.js"></script>
 
 	<link rel="stylesheet" href="eeditor.css">
-	<!-- <link rel="stylesheet" href="http://www.eurobytes.nl/css/class.css"> -->
+
+	<!-- Font Awesome: The iconic font and CSS toolkit -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 
 <style>
 html, body {
   background: #EEEEEE;
+  margin: 0px;
+  padding: 0px;
 }
 
 article {
-  max-width: 50em;
-  background: white;
-  padding: 2em;
-  margin: 1em auto;
-  border: 1px solid #CCCCCC;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  width: 80%;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #cccccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 20px;
+    width: 65%;
 }
 
 #cancel {
@@ -90,107 +97,13 @@ p.tabnav a {
 	color: #999;
 }
 
-article.tabs {
-	position: relative;
-	display: block;
-	width: 40em;
-	height: 15em;
-	margin: 2em auto;
-    background: none;
-    border: 1px solid #CCCCCC;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    margin: 1em auto;
-    padding: 20px;
-    max-width: 50em;
-    padding: 2em;
-    width: 80%;
-}
-
-article.tabs section {
-    background-color: #f9f9f9;
-    border-radius: 0;
-    border-top: 1px solid #454545;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-    display: block;
-    height: 88%;
-    left: 0;
-    margin-top: 5px;
-    padding: 10px 20px;
-    position: absolute;
-    top: 1.8em;
-    width: 100%;
-    z-index: 0;
-}
-
-article.tabs section:first-child {
-	z-index: 1;
-}
-
-article.tabs section h2 {
-    background-color: #EEEEEE;
-    border: 1px solid #454545;
-    border-radius: 5px 5px 0 0;
-    color: #999;
-    font-size: 1em;
-    font-weight: normal;
-    height: 1.8em;
-    left: 10px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: -1.8em;
-    width: 115px;
-}
-
 *:focus, *:active  {
     outline:0; /*removes the dotted border*/
-}
-
-a:focus, *:focus {
-    noFocusLine: expression(this.onFocus=this.blur());
-}
-
-
-article.tabs section:nth-child(2) h2 {
-	left: 130px;
-}
-
-article.tabs section:nth-child(3) h2 {
-	left: 250px;
-}
-
-article.tabs section:nth-child(4) h2 {
-	left: 370px;
-}
-
-article.tabs section h2 a {
-	display: block;
-	width: 100%;
-	line-height: 1.8em;
-	text-align: center;
-	text-decoration: none;
-	color: inherit;
-	outline: 0 none;
-}
-
-article.tabs section,
-article.tabs section h2 {
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-ms-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
-	transition: all 500ms ease;
-}
-
-article.tabs section:target,
-article.tabs section:target h2 {
-	color: #333;
-	background-color: #fff;
-	z-index: 2;
+    /*noFocusLine: expression(this.onFocus=this.blur());*/
 }
 
 div#settingswindow {
-    background-color: #eeeeee;
+    background-color: #f1f1f1;
     border: 1px solid #cccccc;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     left: 25%;
@@ -198,9 +111,9 @@ div#settingswindow {
     padding: 20px;
     position: absolute;
     right: 25%;
+    top: 25%;
     z-index: 100;
 }
-
 
 #settingswindow section#settings b {
     display: inline-block;
@@ -258,11 +171,38 @@ div#settingswindow {
 }
 
 .active{
-    background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);
+    /*background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);*/
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;
-    border: 1px solid #3465A4;
+    /*border: 1px solid #3465A4;*/
     outline: none;
 }
+
+#style option {
+	display: block;
+}
+
+/* Fontawesome 'hack'. Display the icon after the content */
+.after:before {
+    float: right;
+}
+
+#font-family, #style {
+	font-size: 15px;
+}
+
+#spellcheck > span {
+    color: #000000;
+    float: right;
+    margin: -20px 3px 0 0;
+    padding: 0;
+}
+
+
+/*.line-break:after {
+	content: "↵";
+	font-size: 15px;
+	font-weight: 900;
+	}*/
 </style>
 
 </head>
@@ -414,6 +354,9 @@ div#settingswindow {
 		</section>
 	</div> -->
 
+
+<!-- <i class="fa fa-github" style="font-size: 75px;float: right;"></i> -->
+<a href="https://github.com/blade1989/EuroEditor" class="fa fa-github" style="font-size: 75px;float: right;text-decoration: none;margin: 20px;" title="blade1989/EuroEditor"></a>
  <article>
 
  	<h1 style="margin: 0px auto; width: 50%;">
@@ -423,6 +366,30 @@ div#settingswindow {
  		<p>
  			Due note that this is just a demo of an unfinished product. Many feature are still not working, or are incomplete. This is just a playground to get a glimpse of what is to come.
  		</p>
+
+
+<!-- Testing Out imgur replacement, as they have a 250 images limit -->
+
+<!-- <script src="sjcl.js"></script>
+<script src="img.bi.js"></script>
+
+
+<img data-imgbi="https://img.bi/#!mnqSLmy!4Rnqh8LYLWEttc3PtIUibqtFWvR2l0g5Ug6m0zsZ" /> -->
+
+<!-- <p style="border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;">
+	<a href="https://img.bi/#/2ADDhBO!vb1qTNBc8wnvLeoZF7SaEeJXVhd9KWDytI3BBUfN">
+		<img data-imgbi="https://img.bi/#/2ADDhBO!vb1qTNBc8wnvLeoZF7SaEeJXVhd9KWDytI3BBUfN" />
+	</a>
+</p> -->
+
+
+<!-- 		<div class="btn-group">
+		  <a class="btn btn-default" href="#"><i class="fa fa-align-left"></i></a>
+		  <a class="btn btn-default" href="#"><i class="fa fa-align-center"></i></a>
+		  <a class="btn btn-default" href="#"><i class="fa fa-align-right"></i></a>
+		  <a class="btn btn-default" href="#"><i class="fa fa-align-justify"></i></a>
+		</div> -->
+
 
 
 <div id="eeditor">
@@ -439,59 +406,111 @@ div#settingswindow {
 
 	<div id="eebuttons">
 
-		<button onclick="new()" id="new" title="Open a new article"></button>
-		<button onclick="startmenu()" id="open" title="Select a file from startmenu"></button>
+		<button onclick="new()" id="new" title="Open a new article">
+			<i class="fa fa-file-o"></i>
+		</button>
+		<button onclick="startmenu()" id="open" title="Select a file from startmenu">
+			<i class="fa fa-download"></i>
+		</button>
 
-		<span id="spacer"></span>
+		<span class="spacer"></span>
 
-		<button onclick="save()" id="save" title="save this article"></button>
-		<button onclick="javascript:window.location='mailto:?subject=Interesting information&amp;body=I thought you might find this information interesting: ' + window.location;" id="mail" title="mail this page"></button>
+		<button onclick="save()" id="save" title="save this article">
+			<i class="fa fa-floppy-o"></i>
+		</button>
 
-		<span id="spacer"></span>
+		<button onclick="javascript:window.location='mailto:?subject=Interesting information&amp;body=I thought you might find this information interesting: ' + window.location;" id="mail" title="mail this page">
+			<i class="fa fa-envelope"></i>
+		</button>
 
-		<button onclick="edit()" id="edit" title="edit this article" style="opacity: 0.5;z-index: 0;"></button>
+		<span class="spacer"></span>
 
-		<button onclick="pdf()" id="expdf" title="Export as pdf"></button>
-		<button onclick="print()" id="print" title="Print this page"></button>
-		<button onclick="printpreview()" id="printpreview" title="Print preview"></button>
+		<button onclick="edit()" id="edit" title="edit this article" style="opacity: 0.5;z-index: 0;">
+			<i class="fa fa-pencil-square-o"></i>
+		</button>
 
-		<span id="spacer"></span>
+		<button onclick="pdf()" id="expdf" title="Export as pdf">
+			<i class="fa fa-file-pdf-o"></i>
+		</button>
+		<button onclick="print()" id="print" title="Print this page">
+			<i class="fa fa-print"></i>
+		</button>
+		<button onclick="printpreview()" id="printpreview" title="Print preview">
+			<i class="fa fa-print" style="float: right;margin-bottom: -5px;"></i>
+			<i class="fa fa-search" style="float: right;margin-top: -5px; margin-left: -10px;font-size: 12px; color: #1B1b1B;"></i>
+		</button>
+
+		<span class="spacer"></span>
 
 		<!-- <button onclick="spellcheckon()" id="spellcheck" title="Turn Spell Checker on"></button>
 		<button onclick="spellcheckoff()" id="spellcheckoff" title="Turn Spell Checker Off"></button> -->
 
-		<button onclick="spellcheckon()" id="spellcheck" title="Turn Spell Checker on" style="opacity: 0.5;z-index: 0;"></button>
+		<button onclick="spellcheckon()" id="spellcheck" title="Turn Spell Checker on" style="opacity: 0.5;z-index: 0;">
+			<i class="fa fa-check"></i>
+			<span>A</span>
+		</button>
 
 
-		<span id="spacer"></span>
+		<span class="spacer"></span>
 
-		<button onclick="cut()" id="cut" title="Cut the selected text" style="opacity: 0.5;z-index: 0;"></button>
-		<button onclick="paste()" id="paste" title="Paste the copied text" style="opacity: 0.5;z-index: 0;"></button>
-		<button onclick="copyToClipboard()" id="cp" title="Clipboard manager" style="opacity: 0.5;z-index: 0;"></button>
+		<button onclick="cut()" id="cut" title="Cut the selected text" style="opacity: 0.5;z-index: 0;">
+			<i class="fa fa-scissors"></i>
+		</button>
 
-		<span id="spacer"></span>
+		<button onclick="copy()" id="copy" title="copy the selected text" style="opacity: 0.5;z-index: 0;">
+			<i class="fa fa-files-o"></i>
+		</button>
+
+<!-- 		<button onclick="copyToClipboard()" id="cp" title="Clipboard manager" style="opacity: 0.5;z-index: 0;">
+			<i class="fa fa-clipboard"></i>
+		</button>
+ -->
+
+		<span class="spacer"></span>
 
 		<button onclick="revertt()" id="revert" title="revert the last made changes" style="opacity: 0.5;z-index: 0;">
-			
+			<i class="fa fa-undo"></i>
 		</button>
+
+		<!--[if !IE]> -->
+		<div class="notIE">
+		  <!-- <![endif]-->
+		  <span class="fancyArrow fa fa-history"></span>
+		  <select name="versionhistory" class="">
+ 			<option title="Revert back to">enter</option>
+ 			<option title="Revert back to">space</option>
+ 			<option title="Revert back to">bold</option>
+		  </select>
+		  <!--[if !IE]> -->
+		</div>
+		<!-- <![endif]-->
+
+
 		<button onclick="apply()" id="apply" title="Forward with the last made changes" style="opacity: 0.5;background-image: none;z-index: 0;">
-			<span>&crarr;</span>
+			<i class="fa fa-repeat"></i>
 		</button>
 
 
-		<span id="spacer"></span>
+		<span class="spacer"></span>
 
-		<button onclick="link()" id="link" title="create a link"></button>
-		<button onclick="img()" id="img" title="Upload/link to an image"></button>
+		<button onclick="link()" id="link" title="create a link">
+			<i class="fa fa-link"></i>
+		</button>
+		
+		<button onclick="img()" id="img" title="Upload/link to an image">
+			<i class="fa fa-picture-o"></i>
+		</button>
 
-		<span id="spacer"></span>
+		<span class="spacer"></span>
 
-		<button onclick="table()" id="table" title="create a table"></button>
+		<button onclick="table()" id="table" title="create a table">
+			<i class="fa fa-table "></i>
+		</button>
 
 
 		<!-- <button onclick="ucharachters()" id="ucharachters" title="Display unprintable charachters"></button> -->
 
-		<span id="spacer"></span>
+		<span class="spacer"></span>
 
 		<!-- 
 
@@ -504,108 +523,163 @@ div#settingswindow {
 
 ]
 		</button> 
-
-
 	-->
 
-
-
-
 		<button onclick="fullscreen()" id="fullscreen" title="Full screen editor">
-
-			<!-- <div id="fullicon"> -->
-
-				<span id="updown">&harr;</span>
-
-				<div id="leftright">&harr;</div>
-
-			<!-- </div> -->
-
+			<i class="fa fa-arrows-alt"></i>
 		</button>
 
-		<button onclick="source()" id="source" title="View Source Code">S</button>
+		<button onclick="source()" id="source" title="View Source Code">
+			<i class="fa fa-code"></i>
+		</button>
 
-		<button onclick="index()" id="toc" title="Table Of Contents">TC</button>
+		<button onclick="index()" id="toc" title="Table Of Contents">
+			<i class="fa fa-compass"></i>
+		</button>
 
 
-		<button onclick="help()" id="help" title="Display help page">?</button>
+		<button onclick="help()" id="help" title="Display help page">
+			<i class="fa fa-question"></i>
+		</button>
 
 
 		<button onclick="pagefeaturebutton()" id="pagefeature" title="Show the page settings">
 			<span>&equiv;</span>
+			<!-- <i class="fa fa-bars"></i>  -->
 		</button>
 
-		<button onclick="unprintablecharachters()" id="unprintablecharachters" title="Show non printable chanrachter">¶</button>
+		<button onclick="unprintablecharachters()" id="unprintablecharachters" title="Show non printable chanrachter">
+			<!-- <i class="fa fa-paragraph"></i> -->&para;
+			<!-- ¶ -->
+		</button>
 
 	</div>
 	
 	<div id="eebuttons2">
 
-		<select title="style" id="style">
-		  <option value="paragraph">parargraph</option>
-		  <option value="H1">header 1</option>
-		  <option value="H2">header 2</option>
-		  <option value="H3">header 3</option>
-		  <option value="blockquote" id="blockquote" onclick="blockquote()">blockquote</option>
-		  <option value="code" id="code" onclick="code()">code</option>
-		</select>
+		<!--[if !IE]> -->
+		<div class="notIE">
+		  <!-- <![endif]-->
+		  <span class="fancyArrow fa fa-chevron-down"></span>
+				<select title="style" id="style">
+				  <option value="paragraph" class="fa fa-paragraph after">parargraph</option>
+				  <option value="H1" class="fa fa-header">1</option>
+				  <option value="H2" class="fa fa-header">2</option>
+				  <option value="H3" class="fa fa-header">3</option>
+				  <option value="blockquote" id="blockquote" onclick="blockquote()">blockquote</option>
+				  <option value="terminalcode" id="terminalcode" onclick="terminalcode()">terminalcode</option>
+				  <option value="prettyprint" id="prettyprint" onclick="prettyprint()" class="fa fa-code after">function EuroEditor.js() </option>
+				</select>
+		  <!--[if !IE]> -->
+		</div>
+		<!-- <![endif]-->
 
-		<select title="font-family">
-		  <option value="liberation-serif">Liberation Serif</option>
-		  <option value="serif">serif</option>
-		  <option value="sans-serif" id="sans-serif">sans-serif</option>
-		  <option value="times-new-roman">Times New Roman</option>
-		</select>
+		<!--[if !IE]> -->
+		<div class="notIE">
+		  <!-- <![endif]-->
+		  <span class="fancyArrow fa fa-chevron-down"></span>
+			<select title="font-family" id="font-family">
+			  <option value="default" class="fa fa-font">fonts</option>
+			  <option value="liberation-serif" style="font-family:liberation-serif;">Liberation Serif</option>
+			  <option value="serif" style="font-family:serif;">serif</option>
+			  <option value="sans-serif" id="sans-serif" style="font-family:sans-serif;">sans-serif</option>
+			  <option value="times-new-roman" style="font-family:times-new-roman;">Times New Roman</option>
+			</select>
+		  <!--[if !IE]> -->
+		</div>
+		<!-- <![endif]-->
 
-		<select title="font-size">
-		  <option value="onepx">1px</option>
-		  <option value="twopx">2px</option>
-		  <option value="fourpx">4px</option>
-		  <option value="eightpx">8px</option>
-		  <option value="sixteenpx" selected>16px</option>
-		  <option value="twentyeightpx">28px</option>
-		</select>
+		<!--[if !IE]> -->
+		<div class="notIE">
+		  <!-- <![endif]-->
+		  <span class="fancyArrow fa fa-chevron-down"></span>
+			<select title="font-size" id="font-size">
+			  <option value="custom" id="custom" onclick="custominput()">custom</option>
+			  <option value="onepx">1px</option>
+			  <option value="twopx">2px</option>
+			  <option value="fourpx">4px</option>
+			  <option value="eightpx">8px</option>
+			  <option value="sixteenpx" selected>16px</option>
+			  <option value="twentyeightpx">28px</option>
+			</select>
+		  <!--[if !IE]> -->
+		</div>
+		<!-- <![endif]-->
 
+		<button id="bold" title="Bold selected text">
+			<i class="fa fa-bold"></i>
+		</button>
 
-		<button id="bold" title="Bold selected text">B</button>
-		<button id="italic" title="Italic selected text">I</button>
-		<button id="underline" title="Underlin selected text">U</button>
+		<button id="italic" title="Italic selected text">
+			<i class="fa fa-italic"></i>
+		</button>
 
-		<span id="spacer"></span>
+		<button id="underline" title="Underlin selected text">
+			<i class="fa fa-underline"></i>
+		</button>
 
-		<button id="textleft" title="Align text to the left"></button>
-		<button id="textcenter" title="Align text to the center"></button>
-		<button id="textright" title="Align text to the right"></button>
-		<button id="textjustified" title="Align text to the justified"></button>
+		<span class="spacer"></span>
 
-		<span id="spacer"></span>
+		<button id="textleft" title="Align text to the left">
+			<i class="fa fa-align-left"></i>
+		</button>
+		<button id="textcenter" title="Align text to the center">
+			<i class="fa fa-align-center"></i>
+		</button>
 
-		<button id="ol" title="Make an ordered list">OL</button>
-		<button id="ul" title="Make an unorderd list">UL</button>
+		<button id="textright" title="Align text to the right">
+			<i class="fa fa-align-right"></i>
+		</button>
 
-		<button id="tabtoleft" title="tab to the left"> &lt; </button>
-		<button id="tabtoright" title="tab to the right"> &gt; </button>
+		<button id="textjustified" title="Align text to the justified">
+			<i class="fa fa-align-justify"></i>
+		</button>
 
-		<span id="spacer"></span>
+		<span class="spacer"></span>
+
+		<button id="ol" title="Make an ordered list">
+			<i class="fa fa-list-ol"></i>
+		</button>
+
+		<button id="ul" title="Make an unorderd list">
+			<i class="fa fa-list-ul"></i>
+		</button>
+
+		<button id="tabtoleft" title="tab to the left">
+			<i class="fa fa-indent"></i>
+		</button>
+
+		<button id="tabtoright" title="tab to the right">
+			<i class="fa fa-outdent"></i>
+		</button>
+
+		<span class="spacer"></span>
 
 <!-- 		<button id="textcolor" title="Change text color" style="background-color: #454545;">A</button>
 		<button id="mark" title="mark the selected text" style="background-color: #CC0000;">A</button>
 
  -->
 
-		<select title="Emjicons" style="width: 45px;">
-			<option style="background-image: url(../images/ubuntu-smileys/icon_biggrin.png); background-size: 55% 100%;background-repeat: no-repeat;" >&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_confused.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_cool.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_eek.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_mad.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_neutral.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_razz.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_sad.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_smile.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_surprised.png); background-size: 55% 100%;background-repeat: no-repeat;" selected>&nbsp;</option>
-			<option style="background-image: url(../images/ubuntu-smileys/icon_wink.png); background-size: 55% 100%;background-repeat: no-repeat;">&nbsp;</option>
-		</select>
+		<!--[if !IE]> -->
+		<div class="notIE">
+		  <!-- <![endif]-->
+		  <span class="fancyArrow fa fa-chevron-down"></span>
+		  <select name="ubuntu-smileys">
+			<option id="icon_biggrin" value="icon_biggrin">&nbsp;</option>
+			<option id="icon_confused" value="icon_confused">&nbsp;</option>
+			<option id="icon_cool" value="icon_cool">&nbsp;</option>
+			<option id="icon_eek" value="icon_eek">&nbsp;</option>
+			<option id="icon_mad" value="icon_mad">&nbsp;</option>
+			<option id="icon_neutral" value="icon_neutral">&nbsp;</option>
+			<option id="icon_razz" value="icon_razz">&nbsp;</option>
+			<option id="icon_sad" value="icon_sad">&nbsp;</option>
+			<option id="icon_smile" value="icon_smile">&nbsp;</option>
+			<option id="icon_surprised" value="icon_surprised" selected>&nbsp;</option>
+			<option id="icon_wink" value="icon_wink">&nbsp;</option>
+		  </select>
+		  <!--[if !IE]> -->
+		</div>
+		<!-- <![endif]-->
 
 	</div> <!-- eebuttons2 -->
 
@@ -775,7 +849,7 @@ Console and Style Editor. </p></li><li><p><a rel="nofollow" href="https://www.yo
 <!-- eetextarea -->
 
 
-<textarea id="holder" class="hidden" onchange="copy();"></textarea>
+<!-- <textarea id="holder" class="hidden" onchange="copy();"></textarea> -->
 
 <!-- <input type="submit" value="submit"> -->
 </form>
