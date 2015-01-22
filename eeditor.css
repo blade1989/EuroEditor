@@ -81,7 +81,7 @@ h2, h3, h4, h5, h6 {
     text-transform: capitalize;
 }
 
-* {
+*, *:after, *:before {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -90,6 +90,7 @@ h2, h3, h4, h5, h6 {
     transition: all 500ms ease;
     color: #454545;
 }
+
 
 /*::selection {
    background-color: #454545;
@@ -169,22 +170,28 @@ html body article #eeditor #eebuttons, #eebuttons2 {
 }
 
 #eebuttons2 {
-    display: none; /* at page load the editor are is not editable. */
+    display: none; /* at page load the editor is not editable. */
 }
 
 #eebuttons, #eebuttons2 {
     height: 35px;
 }
 
+textarea {
+    border: 1px solid #CCCCCC;
+    margin: 0;
+}
+
 #eetextarea, textarea#holder {
     color: #454545;
-    height: auto;
+    /*height: auto;*/
+    height: 750px;
     max-height: 750px;
     max-width: 100%;
     min-height: 250px;
     min-width: 50%;
     overflow: auto;
-    padding: 0 5px;
+    padding: 0px 15px 0px 10px;
     resize: vertical;
     text-align: left;
     width: 100%;
@@ -195,7 +202,6 @@ html body article #eeditor #eebuttons, #eebuttons2 {
 	min-width: 35%;
 	width: auto;
     margin: 20px 10%;
-
 }
 
 #eetextarea:hover {
@@ -206,7 +212,9 @@ html body article #eeditor #eebuttons, #eebuttons2 {
 
 button:hover {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;
-    background: linear-gradient(to bottom, #F9F9F9, #FFFFFF) repeat scroll 0 0 rgba(0, 0, 0, 0.75);
+    /*background: linear-gradient(to bottom, #F9F9F9, #FFFFFF) repeat scroll 0 0 rgba(0, 0, 0, 0.75);*/
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
     cursor: pointer;
 }
 
@@ -226,28 +234,41 @@ input:hover {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;
 }
 
-button {
+#eebuttons > button#unprintablecharachters {
+    font-size: 15px;
+    padding: 0;
+}
+
+button, select {
     float: left;
-    font-size: 13px;
-    height: 25px;
-    margin: 2px;
-    outline: none;
-    padding: 0 5px;
+    outline: medium none;
     width: 25px;
+    height: 25px;
+    -moz-user-select: none;
+    background-image: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin: 2px;
+    padding: 2px 3px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
-button:focus, #eetextarea:focus, input:focus {
-    border: 1px solid #3465A4;
-    outline: none;
+button:focus, #eetextarea:focus, input:focus, select:focus, option:focus, option:selected {
+    outline: 0;
 }
 
-button:active, #eetextarea:active, input:active {
-    border: 1px solid #3465A4;
-    outline: none;
+button:active, #eetextarea:active, input:active, select:active, option:active, option:selected {
+    outline: 0;
 }
 
 button::-moz-focus-inner { 
   border: 0; 
+  outline: 0;
 }
 
 button#bold {
@@ -262,7 +283,7 @@ button#underline {
 	text-decoration: underline;
 }
 
-span#spacer {
+span.spacer {
     border: 1px solid #cccccc;
     display: inline-block;
     float: left;
@@ -272,8 +293,19 @@ span#spacer {
 }
 
 #settingswindow > button#closesettingswindow {
+    background: none repeat scroll 0 0 #ffffff;
+    color: #454545;
     float: right;
     margin: -15px;
+    padding: 0;
+}
+
+#info input[type="submit"] {
+    margin: 0;
+}
+
+#info input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 select {
@@ -284,6 +316,74 @@ select {
     text-align: left;
 }
 
+#icon_biggrin {
+    background-image: url('http://www.eurobytes.nl/images/ubuntu-smileys/icon_biggrin.png');
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_confused {
+    background-image: url('http://www.eurobytes.nl/images/ubuntu-smileys/icon_confused.png');
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_cool {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_cool.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_eek {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_eek.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_mad {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_mad.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_neutral {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_neutral.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_razz {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_razz.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_sad {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_sad.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_smile {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_smile.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_surprised {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_surprised.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+#icon_wink {
+    background-image: url(http://www.eurobytes.nl/images/ubuntu-smileys/icon_wink.png);
+    background-size: 35% 100%;
+    background-repeat: no-repeat;
+}
+
+
+/*
 #new {
 	background-image: url("images/eetoolbar.png");
     background-position: -4px -4px;
@@ -327,7 +427,7 @@ select {
 #spellcheck {
     background-image: url("images/eetoolbar.png");
     background-position: -326px -4px;
-}
+}*/
 
 .spellcheckbaroff:after {
     content: "Off";
@@ -336,7 +436,7 @@ select {
 .spellcheckbaronn:after {
     content: "On";
 }
-
+/*
 #cut {
     background-image: url("images/eetoolbar.png");
     background-position: -399px -4px;
@@ -360,7 +460,7 @@ select {
 #apply {
     background-image: url("images/eetoolbar.png");
     background-position: -606px -4px;
-}
+}*/
 
 #apply span {
     color: #454545;
@@ -381,7 +481,7 @@ select {
     transform: rotate(180deg);
 }
 
-#link {
+/*#link {
     background-image: url("images/eetoolbar.png");
     background-position: -664px -4px;
 	
@@ -405,8 +505,8 @@ select {
 }
 
 #help {
-/*    background-image: url("images/eetoolbar.png");
-    background-position: -892px -4px;*/
+    background-image: url("images/eetoolbar.png");
+    background-position: -892px -4px;
 }
 
 #textleft {
@@ -427,7 +527,7 @@ select {
 #textjustified {
 	background-image: url("images/eetoolbar.png");
 	background-position: -206px -35px;
-}
+}*/
 
 #eeditor #finalcount {
  	border-top: 0px none;
@@ -456,24 +556,117 @@ select {
     transition: all 500ms ease;
 }
 
-select {
+select#style, select#font-family, select#font-size {
     width: 100px;
 }
 
-#fullscreen {
+/* Select*/
+
+.notIE {
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+[disabled] {
+    -moz-user-input: disabled;
+    background: #F0F0F0;
+    color: #6D6D6D;
+    cursor: context-menu;
+}
+
+[disabled]:hover {
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-decoration: none;
+}
+
+input#custominput {
+    height: 25px;
+    margin: 2px 0 0;
+    width: 100px;
+}
+
+/*#style #code {
+    font-family: monospace;
+    font-size: 12px;
+}*/
+
+#eetextarea[contenteditable="false"] {
+    -moz-user-input: disabled;
+    background: #F0F0F0;
+    color: #6D6D6D;
+    cursor: context-menu;
+}
+
+.notIE select:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+.notIE:hover .fancyArrow {
+    background: #F1F1F1;
+/*    border-left: 1px solid #CCCCCC;
+    margin-left: -10px;*/
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+
+
+select {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #c8bfc4;
+    color: #74646e;
+    display: inline-block;
+    height: 25px;
+    outline: medium none;
+    width: 75px;
+}
+
+/* Select arrow styling */
+
+.notIE .fancyArrow {
+    background: none repeat scroll 0 0 #ffffff;
+    display: inline-block;
+    height: 23px;
+    margin: 3px 0 0;
+    padding: 3px 3px 3px 5px;
+    pointer-events: none;
+    position: absolute;
+    right: 2px;
+    top: 0;
+    width: 25px;
+}
+
+/*target Internet Explorer 9 and Internet Explorer 10:*/
+
+@media screen and (min-width: 0\0) {
+  .notIE .fancyArrow {
+    display: none;
+  }
+}
+
+
+/* select
+
+
+ */
+
+/*#fullscreen {
     color: #454545;
     display: inline-block;
     font-size: 20px;
     padding: 0;
 }
-
+*/
 #pagefeature > span {
     float: left;
+    font-family: monospace;
     font-size: 22px;
-    margin: -3px 0 0;
+    font-weight: 900;
+    margin: -10px 0;
     padding: 0;
 }
-
 #fullscreen > span {
     float: left;
 }
@@ -500,7 +693,7 @@ select {
 */
 
 /*#eetextarea p:after, #eetextarea h1:after, #eetextarea h2:after, #eetextarea h3:after, #eetextarea h4:after, #eetextarea h5:after, #eetextarea h6:after {
-    content: "¶";
+    content: "Â¶";
     margin: 0;
     padding: 0;
     vertical-align: super;
@@ -606,9 +799,9 @@ div.pagefeature {
     width: 49%;
 }
 
-html body article #eeditor #eebuttons *:active {
+/*html body article #eeditor #eebuttons *:active {
     border: 1px solid #3465a4;
-}
+}*/
 
 
 /*#eetextarea[contenteditable="true"] #eeditor #eebuttons2 {
