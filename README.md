@@ -11,18 +11,22 @@ Written in HTML5, CSS3, Jquery.
 
 ##[Real live demo of EuroEditor](http://www.eurobytes.nl/demos/EuroEditor/)
 
-For your pleasure. Go ahead and test it out.  
+For your pleasure. Go ahead and test it out.
 
 ##Features
+
  Some Feature that are working, or close to
 
  - Browse Button(Currently read Only)
   - MEGA(service)
   - Dropbox (service)
   - OneDrive
-  - Local. Files on your server, which EuroEditor is on.
-  - Search. For searching files you put on Mega, Dropbox, OneDrive and on your local server.
-  - Template. Choose a template, for the article your about to write.
+  - Local(Files on your server, which EuroEditor is on.)
+  - Search(For searching files you put on Mega, Dropbox, OneDrive and on your local server.)
+  - Template(Choose a template, for the article / page your about to write.)
+    - Parallax scrolling website.
+    - News paper like
+    - Power-point
  - Import documents, to post as articles(Not yet implemented).
  - Mail the link, and or entire article(Not yet implemented)
  - Edit Mode/Read only mode
