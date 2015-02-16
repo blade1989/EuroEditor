@@ -9,7 +9,7 @@ EuroEditor - at the time of writing - is a unfinished product. Inspired by [Libr
 
 Written in HTML5, CSS3, Jquery. 
 
-##[Real live demo of EuroEditor](http://www.eurobytes.nl/demos/EuroEditor/)
+##[Real live demo of EuroEditor](http://blade1989.github.io/EuroEditor/)
 
 For your pleasure. Go ahead and test it out.
 
@@ -40,6 +40,7 @@ For your pleasure. Go ahead and test it out.
  - Rich Text Editing
  - Source Code Editing
  - MarkDown Editor(Not yet implemented)
+   - [Single-page Markdown Web Editor (spmdwe)](http://sdaaubckp.sourceforge.net/spmdwe/spmdwe.php)
  - Dynamic Table Of Content of the current Headers: [jquery.toc.js](https://github.com/blade1989/jquery.toc.js)
  - Settings Window - `≡`(`&equiv;`) - for now read only mode:
   - Info(Information about the current article)

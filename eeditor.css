@@ -168,10 +168,11 @@ html body article #eeditor #eebuttons, #eebuttons2 {
     text-align: left;
 
 }
+/*
 
 #eebuttons2 {
-    display: none; /* at page load the editor is not editable. */
-}
+    display: none; /* at page load the editor is not editable.
+} */
 
 #eebuttons, #eebuttons2 {
     height: 35px;
