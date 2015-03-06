@@ -384,52 +384,6 @@ select {
 }
 
 
-/*
-#new {
-	background-image: url("images/eetoolbar.png");
-    background-position: -4px -4px;
-}
-
-#open {
-    background-image: url("images/eetoolbar.png");
-    background-position: -53px -4px;
-}
-
-#save {
-    background-image: url("images/eetoolbar.png");
-    background-position: -103px -4px;
-}
-
-#mail {
-    background-image: url("images/eetoolbar.png");
-    background-position: -137px -4px;
-}
-
-#edit {
-    background-image: url("images/eetoolbar.png");
-    background-position: -177px -4px;
-}
-
-#expdf {
-    background-image: url("images/eetoolbar.png");
-    background-position: -217px -4px;
-}
-
-#print {
-    background-image: url("images/eetoolbar.png");
-    background-position: -251px -4px;
-}
-
-#printpreview {
-    background-image: url("images/eetoolbar.png");
-    background-position: -285px -4px;
-}
-
-#spellcheck {
-    background-image: url("images/eetoolbar.png");
-    background-position: -326px -4px;
-}*/
-
 .spellcheckbaroff:after {
     content: "Off";
 }
@@ -437,31 +391,6 @@ select {
 .spellcheckbaronn:after {
     content: "On";
 }
-/*
-#cut {
-    background-image: url("images/eetoolbar.png");
-    background-position: -399px -4px;
-}
-
-#paste {
-    background-image: url("images/eetoolbar.png");
-    background-position: -432px -4px;
-}
-
-#cp {
-    background-image: url("images/eetoolbar.png");
-    background-position: -464px -4px;
-}
-
-#revert {
-    background-image: url("images/eetoolbar.png");
-    background-position: -556px -4px;
-}
-
-#apply {
-    background-image: url("images/eetoolbar.png");
-    background-position: -606px -4px;
-}*/
 
 #apply span {
     color: #454545;
@@ -481,54 +410,6 @@ select {
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
 }
-
-/*#link {
-    background-image: url("images/eetoolbar.png");
-    background-position: -664px -4px;
-	
-}
-
-#img {
-    background-image: url("images/eetoolbar.png");
-    background-position: -748px -4px;
-	
-}
-
-#table {
-    background-image: url("images/eetoolbar.png");
-    background-position: -697px -4px;
-	
-}
-
-#ucharachters {
-    background-image: url("images/eetoolbar.png");
-    background-position: -892px -4px;
-}
-
-#help {
-    background-image: url("images/eetoolbar.png");
-    background-position: -892px -4px;
-}
-
-#textleft {
-	background-image: url("images/eetoolbar.png");
-	background-position: -107px -35px;
-}
-
-#textcenter {
-	background-image: url("images/eetoolbar.png");
-	background-position: -141px -35px;
-}
-
-#textright {
-	background-image: url("images/eetoolbar.png");
-	background-position: -174px -35px;
-}
-
-#textjustified {
-	background-image: url("images/eetoolbar.png");
-	background-position: -206px -35px;
-}*/
 
 #eeditor #finalcount {
  	border-top: 0px none;
@@ -589,11 +470,6 @@ input#custominput {
     width: 100px;
 }
 
-/*#style #code {
-    font-family: monospace;
-    font-size: 12px;
-}*/
-
 #eetextarea[contenteditable="false"] {
     -moz-user-input: disabled;
     background: #F0F0F0;
@@ -607,8 +483,6 @@ input#custominput {
 
 .notIE:hover .fancyArrow {
     background: #F1F1F1;
-/*    border-left: 1px solid #CCCCCC;
-    margin-left: -10px;*/
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
 }
 
@@ -648,10 +522,8 @@ select {
 }
 
 
-/* select
+/* select */
 
-
- */
 
 /*#fullscreen {
     color: #454545;
@@ -660,6 +532,7 @@ select {
     padding: 0;
 }
 */
+
 #pagefeature > span {
     float: left;
     font-family: monospace;
@@ -848,47 +721,112 @@ html body article .fullscreen #eebuttons2 {
     content: "Words:";
 }
 
+/* Tooltip */
+
+#eeditor [data-title] {
+    display: inline;
+    position: relative;
+}
+
+#eeditor [data-title]:hover:after {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    bottom: 30px;
+    color: #fff;
+    content: attr(data-title);
+    font-family: helvetica;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    left: 20%;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0;
+    min-width: 100%;
+    padding: 5px 10px;
+    position: absolute;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    text-overflow: clip;
+    vertical-align: baseline;
+    white-space: pre;
+    width: auto;
+    word-spacing: normal;
+    word-wrap: normal;
+    z-index: 99;
+    opacity: 1.0;
+}
+
+#eeditor [data-title]:hover:before {
+    border: solid;
+    border-color: rgba(0, 0, 0, 0.8) rgba(0, 0, 0, 0);
+    border-width: 6px 6px 0 6px;
+    bottom: 24px; /* 20px */
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+
+/* Display the  */
+
+
+/*#eetextarea a[href$=".pdf"]:after, #eetextarea a[href$=".doc"]:after, 
+#eetextarea a[href$=".docx"]:after, #eetextarea a[href$=".xls"]:after, 
+#eetextarea a[href$=".ppt"]:after {
+    font-size: 10px;
+    padding: 0 5px;
+    text-decoration: none;
+    text-shadow: 0 0 0 #cc0000;
+    vertical-align: super;
+}*/
+
+
 
 a[href$=".pdf"]:after, a[href$=".doc"]:after, a[href$=".docx"]:after, a[href$=".xls"]:after, a[href$=".ppt"]:after {
     border: 1px solid #454545;
     border-radius: 25px;
-    color: #FFFFFF;
-    padding: 0px 5px;
-    font-size: 12px;
+    color: #ffffff;
+    font-size: xx-small;
     font-weight: bold;
+    letter-spacing: 1px;
     margin-left: 5px;
     margin-top: -5px;
+    padding: 0 5px;
     text-decoration: none;
     vertical-align: super;
-    -webkit-box-sizing: padding-box; 
-    -moz-box-sizing: padding-box; 
-    box-sizing: padding-box
+
+
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
 
 
-a[href$=".pdf"]:after {
+
+#eetextarea a[href$=".pdf"]:after {
     content: "PDF";
     background-color: #CC0001;
 }
 
-a[href$=".doc"]:after {
+#eetextarea a[href$=".doc"]:after {
     content: "DOC";
     background-color: #5976AF;
 }
 
-a[href$=".docx"]:after {
+#eetextarea a[href$=".docx"]:after {
     content: "DOCX";
     background-color: #023B70;
 }
 
-a[href$=".xls"]:after {
+#eetextarea a[href$=".xls"]:after {
     content: "XLS";
     background-color: #207245;
 }
 
-a[href$=".ppt"]:after {
+#eetextarea a[href$=".ppt"]:after {
     content: "ppt";
     background-color: #D24625;
     padding-bottom: 2px;
