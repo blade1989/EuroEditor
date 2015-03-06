@@ -186,7 +186,7 @@ textarea {
 #eetextarea, textarea#holder {
     color: #454545;
     /*height: auto;*/
-    height: 750px;
+    height: 450px;
     max-height: 750px;
     max-width: 100%;
     min-height: 250px;
