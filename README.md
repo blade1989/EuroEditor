@@ -1,17 +1,17 @@
-EuroEditor
+EuroEditor V0.0.5(Pre-Alpha)
 ==========
 
-EuroEditor, Your free, easy to use and customizable web based editor
+EuroEditor, Your free, easy to use and customizable web based editor.
 
 ---
 
-EuroEditor - at the time of writing - is a unfinished product. Inspired by [Libreoffice - Writer ](https://en.wikipedia.org/wiki/LibreOffice_Writer "LibreOffice Writer - Wikipedia, the free encyclopedia"). This will be the default web-based editor of [EuroCMS](https://github.com/blade1989/EuroCMS)!
+EuroEditor - at the time of writing - is an unfinished product. Inspired by [Libreoffice - Writer ](https://en.wikipedia.org/wiki/LibreOffice_Writer "LibreOffice Writer - Wikipedia, the free encyclopedia"). This will be the default web-based editor of [EuroCMS](https://github.com/blade1989/EuroCMS)!
 
 Written in HTML5, CSS3, Jquery. 
 
 ##[Real live demo of EuroEditor](http://blade1989.github.io/EuroEditor/)
 
-For your pleasure. Go ahead and test it out.
+For your pleasure, [Real live demo of EuroEditor](http://blade1989.github.io/EuroEditor/), Go ahead and test it out.
 
 ##Features
 

@@ -2,7 +2,7 @@
 Author      : Imri Paloja
 Email       : imri.paloja@gmail.com
 HomePage    : www.eurobytes.nl
-Version     : 0.1
+Version     : V0.0.5(Pre-Alpha)
 Name        : EuroEditor.js
 **************************************************/
 
@@ -744,11 +744,11 @@ $(document).ready(function() {
             var unprintablecharachters =
                 "<style id=\"unprintablecharachters\">" +
                 "#eetextarea p:after, #eetextarea h1:after, #eetextarea h2:after, #eetextarea h3:after, #eetextarea h4:after, #eetextarea h5:after, #eetextarea h6:after {" +
-                "content: \"Â¶\";" +
+                "content: \"¶\";" +
                 "}" +
 
                 ".line-break:after {" +
-                "content: \"â†µ\";" +
+                "content: \"↵\";" +
                 "font-size: 15px;" +
                 "font-weight: 900;" +
                 "display: inline-block;"

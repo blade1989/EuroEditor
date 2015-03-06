@@ -2,7 +2,7 @@
 Author      : Imri Paloja
 Email       : imri.paloja@gmail.com
 HomePage    : www.eurobytes.nl
-Version     : 0.1
+Version     : V0.0.5(Pre-Alpha)
 Name        : EuroEditor.css
 **************************************************/
 
@@ -186,7 +186,7 @@ textarea {
 #eetextarea, textarea#holder {
     color: #454545;
     /*height: auto;*/
-    height: 750px;
+    height: 450px;
     max-height: 750px;
     max-width: 100%;
     min-height: 250px;
