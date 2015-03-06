@@ -1,4 +1,4 @@
-EuroEditor
+EuroEditor V0.0.5(Pre-Alpha)
 ==========
 
 EuroEditor, Your free, easy to use and customizable web based editor.

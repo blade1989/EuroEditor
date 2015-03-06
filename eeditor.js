@@ -2,7 +2,7 @@
 Author      : Imri Paloja
 Email       : imri.paloja@gmail.com
 HomePage    : www.eurobytes.nl
-Version     : 0.1
+Version     : V0.0.5(Pre-Alpha)
 Name        : EuroEditor.js
 **************************************************/
 
