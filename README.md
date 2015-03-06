@@ -11,7 +11,7 @@ Written in HTML5, CSS3, Jquery.
 
 ##[Real live demo of EuroEditor](http://blade1989.github.io/EuroEditor/)
 
-For your pleasure, [Real live demo of EuroEditor](http://blade1989.github.io/EuroEditor/)a  Go ahead and test it out.
+For your pleasure, [Real live demo of EuroEditor](http://blade1989.github.io/EuroEditor/), Go ahead and test it out.
 
 ##Features
 
