@@ -126,17 +126,19 @@ function pagefeaturebutton() {
 
 function settings() {
     // $('#settingstab').attr("class", "active");
-    // $('#infotab').removeAttr("class");
+    $('#infotab').removeAttr("style");
     $('#info').attr("style", "display: none;");
     $('#settings').attr("style", "display: block;");
-
+    $('button#settingstab').attr('style', 'background-color: #EEEEEE;');
 }
 
 function info() {
-    // $('#settingstab').removeAttr("class");
+    $('button#settingstab').removeAttr("style");
     // $('#infotab').attr("class", "active");
     $('#info').attr("style", "display: block;");
     $('#settings').attr("style", "display: none;");
+    //$('#settings').attr("style", "display: none;");
+    $('#infotab').attr('style', 'background-color: #EEEEEE;');
 }
 
 function closesettingswindow() {
@@ -240,18 +242,18 @@ function img() {
 
 
 
-function blockquote() {
-    var quote = prompt("Insert quote", "Quotation, n: The act of repeating erroneously the words of another.");
-    var name = prompt("Who said it?", "Author name");
-    var namelink = prompt("Link to the author", "Author homepage");
-    var work = prompt("Which work?", "name of the work");
-    var worklink = prompt("Link to work?", "link to the cited work");
+// function blockquote() {
+//     var quote = prompt("Insert quote", "Quotation, n: The act of repeating erroneously the words of another.");
+//     var name = prompt("Who said it?", "Author name");
+//     var namelink = prompt("Link to the author", "Author homepage");
+//     var work = prompt("Which work?", "name of the work");
+//     var worklink = prompt("Link to work?", "link to the cited work");
 
-    if (blockquote != null) {
-        document.getElementById("eetextarea").innerHTML =
-            "<blockquote cite=" + worklink + ">\n<i>\n " + quote + " \n</i> - \n <p style=\"display: inline;\"> \n<a title=\" " + namelink + " " + name + " \" href=\" " + namelink + " \">" + name + "</a> from \n<a title=\" " + worklink + " : " + work + " \" href=\" " + worklink + " \"> " + work + " </a>\n</p>\n</blockquote>";
-    }
-}
+//     if (blockquote != null) {
+//         document.getElementById("eetextarea").innerHTML =
+//             "<blockquote cite=" + worklink + ">\n<i>\n " + quote + " \n</i> - \n <p style=\"display: inline;\"> \n<a title=\" " + namelink + " " + name + " \" href=\" " + namelink + " \">" + name + "</a> from \n<a title=\" " + worklink + " : " + work + " \" href=\" " + worklink + " \"> " + work + " </a>\n</p>\n</blockquote>";
+//     }
+// }
 
 // $( "#style" ).val();
 function index() {
@@ -544,14 +546,80 @@ function spellcheckoff() {
 
 function custominput() {
     $('#font-size').replaceWith('<input type="number" name="" value="' + $('#font-size selected').text() + '" max="100" min="0" placeholder="" id="custominput">');
-
-
-
 }
 
-
-
 $(document).ready(function() {
+
+    $("#h1").click(function() {
+        // get the selected range
+        var range = window.getSelection().getRangeAt(0);
+
+        // create a new DOM node and set it's style property to red 
+        var newNode = document.createElement('h1');
+        //newNode.style.color = "green";
+
+        // surround the selection with the new span tag 
+        range.surroundContents(newNode);
+        return false;
+    });
+
+    $("#h2").click(function() {
+        // get the selected range
+        var range = window.getSelection().getRangeAt(0);
+
+        // create a new DOM node and set it's style property to red 
+        var newNode = document.createElement('h2');
+        //newNode.style.color = "green";
+
+        // surround the selection with the new span tag 
+        range.surroundContents(newNode);
+        return false;
+    });
+
+    $("#h3").click(function() {
+        // get the selected range
+        var range = window.getSelection().getRangeAt(0);
+
+        // create a new DOM node and set it's style property to red 
+        var newNode = document.createElement('h3');
+        //newNode.style.color = "green";
+
+        // surround the selection with the new span tag 
+        range.surroundContents(newNode);
+        return false;
+    });
+
+    $("#blockquote").click(function() {
+        // get the selected range
+        var range = window.getSelection().getRangeAt(0);
+
+        // create a new DOM node and set it's style property to red 
+        var newNode = document.createElement('blockquote');
+        //newNode.style.color = "green";
+
+        // surround the selection with the new span tag 
+        range.surroundContents(newNode);
+        return false;
+    });
+
+    $("#terminalcode").click(function() {
+        // get the selected range
+        var range = window.getSelection().getRangeAt(0);
+
+        // create a new DOM node and set it's style property to red 
+        var newNode = document.createElement('code');
+        //newNode.style.color = "green";
+
+        // surround the selection with the new span tag 
+        range.surroundContents(newNode);
+        return false;
+    });
+
+
+
+
+
+
 
     $("#bold").click(function() {
         // get the selected range
@@ -585,20 +653,6 @@ $(document).ready(function() {
 
         // create a new DOM node and set it's style property to red 
         var newNode = document.createElement('u');
-        //newNode.style.color = "green";
-
-        // surround the selection with the new span tag 
-        range.surroundContents(newNode);
-        return false;
-    });
-
-
-    $("#blockquote").click(function() {
-        // get the selected range
-        var range = window.getSelection().getRangeAt(0);
-
-        // create a new DOM node and set it's style property to red 
-        var newNode = document.createElement('blockquote');
         //newNode.style.color = "green";
 
         // surround the selection with the new span tag 
