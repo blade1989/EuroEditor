@@ -81,10 +81,32 @@ h2, h3, h4, h5, h6 {
     text-transform: capitalize;
 }
 
+code {
+    border: 1px solid #CCCCCC;
+    background: #EEEEEE;
+    margin: 0px;
+    padding: 0px 3px;
+}
+
+blockquote {
+    background: none repeat scroll 0 0 #eeeeee;
+    border-left: 5px solid #cccccc;
+    margin: 10px auto;
+    padding: 2px 3px;
+    width: 75%;
+}
+
+pre {
+    background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #cccccc;
+    margin: 2px 3px;
+    padding: 2px 3px;
+}
+
 *, *:after, *:before {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
@@ -104,7 +126,7 @@ h2, h3, h4, h5, h6 {
 
 
 /*
-	EuroEditor: 
+    EuroEditor: 
 */
 
 #startmenu {
@@ -150,9 +172,13 @@ h2, h3, h4, h5, h6 {
     width: 75px;
 }
 
+select:-moz-focusring, select:-moz-focusring:focus, select:-moz-focusring:active {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
 
 html body article #eeditor #eebuttons, #eebuttons2 {
-	border-bottom: 0px none;
+    border-bottom: 0px none;
 }
 
 #eeditor, select, #eebuttons2, #eebuttons, #eetextarea, button {
@@ -199,9 +225,9 @@ textarea {
 }
 
 #eetextarea img {
-	max-width: 75%;
-	min-width: 35%;
-	width: auto;
+    max-width: 75%;
+    min-width: 35%;
+    width: auto;
     margin: 20px 10%;
 }
 
@@ -273,15 +299,15 @@ button::-moz-focus-inner {
 }
 
 button#bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 button#italic {
-	font-style: italic;
+    font-style: italic;
 }
 
 button#underline {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 span.spacer {
@@ -412,10 +438,10 @@ select {
 }
 
 #eeditor #finalcount {
- 	border-top: 0px none;
- 	border-left: 1px solid #CCCCCC;
- 	border-right: 1px solid #CCCCCC;
- 	border-bottom: 0px none;
+    border-top: 0px none;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 0px none;
     height: 25px;
     margin-left: 0;
     margin-right: 0;
@@ -440,6 +466,10 @@ select {
 
 select#style, select#font-family, select#font-size {
     width: 100px;
+}
+
+#style {
+    font-weight: 900;
 }
 
 /* Select*/
