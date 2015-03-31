@@ -96,6 +96,13 @@ blockquote {
     width: 75%;
 }
 
+pre {
+    background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #cccccc;
+    margin: 2px 3px;
+    padding: 2px 3px;
+}
+
 *, *:after, *:before {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;

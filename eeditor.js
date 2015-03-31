@@ -546,31 +546,7 @@ function spellcheckoff() {
 
 function custominput() {
     $('#font-size').replaceWith('<input type="number" name="" value="' + $('#font-size selected').text() + '" max="100" min="0" placeholder="" id="custominput">');
-
-
-
 }
-
-
-function H1() {
-    $('#spellcheck').attr('onclick', 'spellcheckon()');
-}
-
-
-function H2() {
-    $('#spellcheck').attr('onclick', 'spellcheckon()');
-}
-
-
-function H3() {
-    $('#spellcheck').attr('onclick', 'spellcheckon()');
-}
-
-
-
-
-
-
 
 $(document).ready(function() {
 
@@ -638,12 +614,6 @@ $(document).ready(function() {
         range.surroundContents(newNode);
         return false;
     });
-
-
-
-
-
-
 
     $("#bold").click(function() {
         // get the selected range
@@ -727,7 +697,8 @@ $(document).ready(function() {
 
         // create a new DOM node and set it's style property to red 
         var newNode = document.createElement('pre');
-        newNode.class = "prettyprint";
+        newNode.class = 'prettyprint';
+        //newNode.class = 'prettyprint';
 
         // surround the selection with the new span tag 
         range.surroundContents(newNode);
