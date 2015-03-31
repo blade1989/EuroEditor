@@ -4,7 +4,7 @@
 Author		: Imri Paloja
 Email 		: Imri.paloja@gmail.com
 HomePage	: www.eurobytes.nl
-Version 	: 0.1
+Version 	: V0.0.5(Pre-Alpha)
 Name 		: EuroEditor
 **************************************************-->
 
@@ -137,15 +137,20 @@ div#settingswindow {
 }
 
 #settingstab > button {
+	background: none repeat scroll 0 0 #f9f9f9;
     border-left: 1px solid #cccccc;
     border-radius: 10px 10px 0 0;
     border-right: 1px solid #cccccc;
     border-top: 1px solid #cccccc;
     float: none;
     font-size: 100%;
-    margin: -3px;
+    margin: 0px -1px -1px 0px;
     width: auto;
 }
+
+/*#settingstab > button:active {
+	margin: 0px 2px -1px 0px;
+}*/
 
 #settingswindow > div {
     border-bottom: 1px solid #cccccc;
@@ -367,8 +372,16 @@ div#settingswindow {
  <article>
 
  	<h1 style="text-align: center;">
- 		EuroEditor<br>V0.0.5(Pre-Alpha)
+ 		EuroEditor
  	</h1>
+
+ 	<p>
+ 		EuroEditor is a web based editor, that can edit a variety of files such as <code>.odf</code> files and can edit the css of a website, and preview it life. This will also be the default editor for <a href="https://github.com/blade1989/EuroCMS" title="GitHub: blade1989/EuroCMS">EuroCMS</a> in the future.
+ 	</p>
+
+ 	<h2>
+ 		V0.0.5(Pre-Alpha)
+ 	</h2>
 
  		<p>
  			Due note that this is just a demo of an unfinished product. Many features are still not working, or are incomplete. This is just a playground to get a glimpse of what is to come.
@@ -575,9 +588,9 @@ div#settingswindow {
 		  <span class="fancyArrow fa fa-chevron-down"></span>
 				<select id="style">
 				  <option value="paragraph" class="fa fa-paragraph after">parargraph</option>
-				  <option value="H1" class="fa fa-header">1</option>
-				  <option value="H2" class="fa fa-header">2</option>
-				  <option value="H3" class="fa fa-header">3</option>
+				  <option value="H1" class="H1" id="h1">H1</option>
+				  <option value="H2" class="H2" id="h2">H2</option>
+				  <option value="H3" class="H3" id="h3">H3</option>
 				  <option value="blockquote" id="blockquote" onclick="blockquote()">blockquote</option>
 				  <option value="terminalcode" id="terminalcode" onclick="terminalcode()">terminalcode</option>
 				  <option value="prettyprint" id="prettyprint" onclick="prettyprint()" class="fa fa-code after">function EuroEditor.js() </option>
