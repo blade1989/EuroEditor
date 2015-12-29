@@ -761,8 +761,8 @@ html body article .fullscreen #eebuttons2 {
 #eeditor [data-title]:hover:after {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
     border-radius: 5px;
-    bottom: 30px;
-    color: #fff;
+    bottom: -42px;
+    color: #FFFFFF;
     content: attr(data-title);
     font-family: helvetica;
     font-size: 14px;
@@ -770,7 +770,7 @@ html body article .fullscreen #eebuttons2 {
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
-    left: 20%;
+    left: 10%;
     letter-spacing: 0;
     line-height: 22px;
     margin: 0;
@@ -787,16 +787,16 @@ html body article .fullscreen #eebuttons2 {
     word-spacing: normal;
     word-wrap: normal;
     z-index: 99;
-    opacity: 1.0;
+    opacity: 1.0 !important;
 }
 
 #eeditor [data-title]:hover:before {
     border: solid;
     border-color: rgba(0, 0, 0, 0.8) rgba(0, 0, 0, 0);
-    border-width: 6px 6px 0 6px;
-    bottom: 24px; /* 20px */
+    border-width: 0 6px 6px;
+    bottom: -10px;
     content: "";
-    left: 50%;
+    left: 25%;
     position: absolute;
     z-index: 99;
 }
