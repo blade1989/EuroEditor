@@ -221,12 +221,17 @@ function link() {
     }
 }
 
+/* ReferenceError: $ is not defined
+	$('#eetextarea').on('keydown', function(e) {
+*/
+
+/*
 $('#eetextarea').on('keydown', function(e) {
     //Check if it was CTRL-L
     if (e.keyCode == 101 && e.ctrlKey) {
         var link = prompt("Enter a link : ");
     }
-});
+});*/
 
 
 function img() {
