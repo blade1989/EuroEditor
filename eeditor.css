@@ -210,15 +210,15 @@ textarea {
 }
 
 #eetextarea, textarea#holder {
+    border-bottom: 0 none !important;
     color: #454545;
-    /*height: auto;*/
     height: 450px;
-    max-height: 750px;
+    max-height: 100%;
     max-width: 100%;
     min-height: 250px;
     min-width: 50%;
     overflow: auto;
-    padding: 0px 15px 0px 10px;
+    padding: 0 15px 0 10px;
     resize: vertical;
     text-align: left;
     width: 100%;
@@ -698,8 +698,7 @@ div.pagefeature {
     border-top: 1px solid #cccccc;
     bottom: 0;
     font-size: 12px;
-    margin: 0 auto;
-    position: fixed;
+    margin: 0 0 5px;
     width: 100%;
 }
 
