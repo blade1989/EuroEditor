@@ -694,9 +694,13 @@ div.pagefeature {
 }
 
 #eetextareainfo {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border-top: 1px solid #cccccc;
+    bottom: 0;
     font-size: 12px;
     margin: 0 auto;
-    width: 99%;
+    position: fixed;
+    width: 100%;
 }
 
 .fullscreen #eetextareainfo {
