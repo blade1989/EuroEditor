@@ -476,19 +476,54 @@ function help() {
 }
 
 
+// function fullscreen() {
+//     $("#eeditor").attr("class", "fullscreen");
+//     $('#fullscreen').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
+//     $("#eetextarea").attr("style", "max-height: 825px;");
+//     $("#fullscreen").attr("onclick", "nomalscreen()");
+// }
+
 function fullscreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+
     $("#eeditor").attr("class", "fullscreen");
     $('#fullscreen').attr('style', "background: linear-gradient(to bottom, #f9f9f9, #ffffff) repeat scroll 0 0 rgba(0, 0, 0, 0.75);box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;");
     $("#eetextarea").attr("style", "max-height: 825px;");
-    $("#fullscreen").attr("onclick", "nomalscreen()");
-}
 
 
-function nomalscreen() {
+
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }
+
     $('#eeditor').removeAttr('class');
     $("#fullscreen").attr("onclick", "fullscreen()");
     $("#fullscreen").removeAttr('style');
+
+      
+  }
+
 }
+
+
+
+
+// function nomalscreen() {
+
+// }
 
 
 function source() {
