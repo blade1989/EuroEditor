@@ -533,19 +533,12 @@ function fullscreen() {
     $('#eeditor').removeAttr('class');
     $("#fullscreen").attr("onclick", "fullscreen()");
     $("#fullscreen").removeAttr('style');
-
-<<<<<<< HEAD
-
-=======
-      
->>>>>>> 12733f69296b6158e18035da2a773434d16a7493
   }
 
 }
 
 
 
-<<<<<<< HEAD
 // $( "p").ready(function() {
 //     var link = prompt("Insert hyperlink", "http://");
 //     var title = prompt("Insert hyperlink title", "title");
@@ -559,12 +552,11 @@ function fullscreen() {
 
     //$('#eetextarea').replaceWith("<textarea id=\"holder\" onchange=\"copy();\">" + $('#eetextarea').html() + "</textarea>");
 
-=======
 
 // function nomalscreen() {
 
 // }
->>>>>>> 12733f69296b6158e18035da2a773434d16a7493
+
 
 
 function source() {
