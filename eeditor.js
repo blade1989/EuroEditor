@@ -221,6 +221,27 @@ function link() {
     }
 }
 
+/*
+    Element Changer
+*/
+
+// $( ".elementchanger" ).mouseover(
+//   function() {
+//     $( this ).append( $( "<span> ***</span>" ) );
+//   }, function() {
+//     $( this ).find( "span:last" ).remove();
+//   }
+// );
+ 
+// $( ".elementchanger.fade" ).mouseover(function() {
+//   $( this ).fadeOut( 100 );
+//   $( this ).fadeIn( 500 );
+// });
+
+
+
+
+
 /* ReferenceError: $ is not defined
 	$('#eetextarea').on('keydown', function(e) {
 */
@@ -513,17 +534,26 @@ function fullscreen() {
     $("#fullscreen").attr("onclick", "fullscreen()");
     $("#fullscreen").removeAttr('style');
 
-      
+
   }
 
 }
 
 
 
+// $( "p").ready(function() {
+//     var link = prompt("Insert hyperlink", "http://");
+//     var title = prompt("Insert hyperlink title", "title");
+//     var name = prompt("Insert hyperlink name", "name");
 
-// function nomalscreen() {
+//     if (link != null) {
+//         document.getElementById("eetextarea").innerHTML =
+//             "\n\<a href=\"" + link + "\" title=\"" + title + "\">" + name + "</a>\n";
+//     }
+// });
 
-// }
+    //$('#eetextarea').replaceWith("<textarea id=\"holder\" onchange=\"copy();\">" + $('#eetextarea').html() + "</textarea>");
+
 
 
 function source() {

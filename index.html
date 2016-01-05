@@ -724,6 +724,43 @@ div#settingswindow {
 
 <h1>EuroEditor</h1>
 
+<hr>
+<b>
+	Link Test
+</b>
+  <script>
+// $( "a.elementchanger" ).mouseover(
+//   function() {
+//     $( this ).append( $( "<span> ***</span>" ) );
+//   }, function() {
+//     $( this ).find( "span:last" ).remove();
+//   }
+// );
+ 
+// $( "a.elementchanger.fade" ).mouseover(function() {
+//   $( this ).fadeOut( 100 );
+//   $( this ).fadeIn( 500 );
+// });$(location).attr('href');
+
+
+$(document).ready(function(){
+    $("a.elementchanger").click(function(){
+         $(this).append($("<div id=\"echanger\"><input type=\"text\" value=\""+ $('.elementchanger').text() +"\" name=\"text\" placeholder=\"Link Name\" autofocus> <input type=\"url\" value=\""+ $('.elementchanger').attr('href') +"\" placeholder=\"url\"> </div>"));
+    });
+    $("a.elementchanger").mouseout(function(){
+         //$("div#echanger").remove();
+    });
+});
+
+  </script>
+<p>
+	<a href="https://www.google.com/" title="Secure Google" class="elementchanger">Google</a>
+</p>
+
+<hr>
+
+
+
 	<p>
 		EuroEditor is a web based editor, that can edit a variety of files such as <code>.odf</code> files and can edit the css of a website, and preview it life. This will also be the default editor for <a href="https://github.com/blade1989/EuroCMS" title="GitHub: blade1989/EuroCMS">EuroCMS</a> in the future.
 	</p>
